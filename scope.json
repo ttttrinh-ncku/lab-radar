@@ -1,9 +1,9 @@
 {
   "_comment": "Research brief for Lab Radar. Machine-read by scripts/collect_repos.py and scripts/validate.py; human-read by the prompts in prompts/PROMPTS_VI.md. Edit freely.",
-  "owner": "ttttrinh-ncku · NCKU (Gojobori Lab)",
+  "owner": "ttttrinh",
   "siteTitle": {
-    "en": "ttttrinh-ncku · Lab Radar — AI × Environmental Biotechnology",
-    "vi": "ttttrinh-ncku · Lab Radar — AI × Công nghệ sinh học môi trường"
+    "en": "ttttrinh",
+    "vi": "ttttrinh"
   },
   "timezone": "Asia/Taipei",
   "rollingWindowMonths": 18,
