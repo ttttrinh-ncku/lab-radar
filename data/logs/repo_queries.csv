@@ -1,0 +1,51 @@
+date,query,tier,total_count,fetched,authenticated
+2026-11-16,"microalgae ""machine learning""",1,6,6,True
+2026-11-16,"microalgae ""deep learning""",1,7,7,True
+2026-11-16,photobioreactor,1,92,92,True
+2026-11-16,topic:microalgae,1,29,29,True
+2026-11-16,algae growth model,1,13,13,True
+2026-11-16,"wastewater ""machine learning""",1,61,61,True
+2026-11-16,"wastewater ""deep learning""",1,8,8,True
+2026-11-16,"wastewater ""digital twin""",1,15,15,True
+2026-11-16,"wastewater ""soft sensor""",1,8,8,True
+2026-11-16,WWTP prediction,1,17,17,True
+2026-11-16,"bioreactor ""reinforcement learning""",1,4,4,True
+2026-11-16,"""activated sludge"" model",2,27,27,True
+2026-11-16,BSM1 benchmark simulation,2,1,1,True
+2026-11-16,"""membrane bioreactor""",2,13,13,True
+2026-11-16,"""anaerobic digestion"" model",2,47,47,True
+2026-11-16,topic:wastewater,2,94,94,True
+2026-11-16,"""water quality"" prediction lstm",2,50,50,True
+2026-11-16,"""PFAS"" water",2,93,93,True
+2026-11-16,perfluoroalkyl,2,7,7,True
+2026-11-16,"""carbon capture"" algae",2,7,7,True
+2026-11-16,wastewater metagenomics,2,74,74,True
+2026-11-16,"""environmental metagenomics"" pipeline",3,8,8,True
+2026-11-16,eDNA metabarcoding,3,270,200,True
+2026-11-16,"""harmful algal bloom"" prediction",3,21,21,True
+2026-11-16,phytoplankton classification,3,20,20,True
+2026-11-16,"microalgae ""machine learning""",1,6,6,True
+2026-11-16,"microalgae ""deep learning""",1,7,7,True
+2026-11-16,photobioreactor,1,92,92,True
+2026-11-16,topic:microalgae,1,29,29,True
+2026-11-16,algae growth model,1,13,13,True
+2026-11-16,"wastewater ""machine learning""",1,61,61,True
+2026-11-16,"wastewater ""deep learning""",1,8,8,True
+2026-11-16,"wastewater ""digital twin""",1,15,15,True
+2026-11-16,"wastewater ""soft sensor""",1,8,8,True
+2026-11-16,WWTP prediction,1,17,17,True
+2026-11-16,"bioreactor ""reinforcement learning""",1,4,4,True
+2026-11-16,"""activated sludge"" model",2,27,27,True
+2026-11-16,BSM1 benchmark simulation,2,1,1,True
+2026-11-16,"""membrane bioreactor""",2,13,13,True
+2026-11-16,"""anaerobic digestion"" model",2,47,47,True
+2026-11-16,topic:wastewater,2,94,94,True
+2026-11-16,"""water quality"" prediction lstm",2,50,50,True
+2026-11-16,"""PFAS"" water",2,93,93,True
+2026-11-16,perfluoroalkyl,2,7,7,True
+2026-11-16,"""carbon capture"" algae",2,7,7,True
+2026-11-16,wastewater metagenomics,2,74,74,True
+2026-11-16,"""environmental metagenomics"" pipeline",3,8,8,True
+2026-11-16,eDNA metabarcoding,3,270,200,True
+2026-11-16,"""harmful algal bloom"" prediction",3,21,21,True
+2026-11-16,phytoplankton classification,3,20,20,True

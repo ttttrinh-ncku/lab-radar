@@ -1,0 +1,167 @@
+[
+  {
+    "id": "evt-isap-2027",
+    "kind": "Conference",
+    "title": "9th Congress of the International Society for Applied Phycology",
+    "acronym": "ISAP 2027",
+    "organizer": "International Society for Applied Phycology; hosted by Murdoch University",
+    "subjects": [
+      "ALGAE"
+    ],
+    "tier": 1,
+    "region": "OCEANIA",
+    "country": "AU",
+    "city": "Perth",
+    "mode": "In-person",
+    "startDate": "2027-11-21",
+    "endDate": "2027-11-26",
+    "status": "Open",
+    "milestones": [
+      {
+        "type": "special_session",
+        "date": "2027-04-15",
+        "tz": null,
+        "note": "Mini-Symposium expressions of interest; notification 2027-05-30. Send EOI to ISAP27@murdoch.edu.au, subject 'ISAP 2027 Mini-Symposium EOI – [Lead Organiser Name]'. No cut-off time stated."
+      },
+      {
+        "type": "notification",
+        "date": "2027-05-30",
+        "tz": null,
+        "note": "Mini-Symposium acceptance"
+      },
+      {
+        "type": "abstract",
+        "date": null,
+        "tz": null,
+        "note": null
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://www.appliedphycologysoc.org/Congress-2027",
+      "https://www.appliedphycologysoc.org/page-18057"
+    ],
+    "contact": "ISAP27@murdoch.edu.au",
+    "sourceDate": "2026-11-16",
+    "verification": "partial",
+    "conflicts": [
+      {
+        "field": "startDate",
+        "values": [
+          "mid-June 2027 (older ISAP event page, dates TBC)",
+          "2027-11-21 to 2027-11-26 (ISAP Congress-2027 page and 2026-10-19 news post)"
+        ],
+        "resolution": "Used the newer official statement (21–26 Nov 2027)."
+      }
+    ],
+    "notes": "Triennial congress; the core venue for applied micro- and macroalgae research. Verified: dates, city, Mini-Symposium EOI call. Not verified: abstract deadline, fees, remote presentation. No dedicated congress website found as of 2026-11-16. CAUTION: isap2027.org is a DIFFERENT event (32nd International Symposium on Antennas and Propagation, Pattaya, Thailand, 9–12 Nov 2027) — same acronym, unrelated field.",
+    "vi": {
+      "notes": "Hội nghị 3 năm một lần, quan trọng nhất cho vi tảo ứng dụng. Đã xác minh: ngày, thành phố, kêu gọi đề xuất Mini-Symposium. Chưa xác minh: hạn nộp tóm tắt, phí, trình bày từ xa. Chưa có website riêng tính đến 16/11/2026. CHÚ Ý: isap2027.org là sự kiện KHÁC (Hội nghị Anten và Truyền sóng lần 32, Pattaya, Thái Lan, 9–12/11/2027) — trùng tên viết tắt, khác lĩnh vực."
+    }
+  },
+  {
+    "id": "evt-algaeurope-2026",
+    "kind": "Conference",
+    "title": "AlgaEurope 2026",
+    "acronym": "AlgaEurope 2026",
+    "organizer": "European Algae Biomass Association (EABA)",
+    "subjects": [
+      "ALGAE"
+    ],
+    "tier": 1,
+    "region": "EUROPE",
+    "country": "MT",
+    "city": "Valletta",
+    "mode": "In-person",
+    "startDate": "2026-12-08",
+    "endDate": null,
+    "status": "Announced",
+    "milestones": [
+      {
+        "type": "abstract",
+        "date": null,
+        "tz": null,
+        "note": "Not verified; likely closed given the start date — check"
+      },
+      {
+        "type": "registration",
+        "date": null,
+        "tz": null,
+        "note": "Not verified"
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://www.eaba-association.org/en/events/9th-congress-of-the-international-society-for-applied-phycology1"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-16",
+    "verification": "partial",
+    "conflicts": [],
+    "notes": "Start date and city taken from the EABA upcoming-events listing only; end date, deadlines and fees not verified on the event's own page.",
+    "vi": {
+      "notes": "Ngày bắt đầu và thành phố mới chỉ lấy từ danh sách sự kiện của EABA; chưa xác minh ngày kết thúc, hạn nộp, phí trên trang riêng của sự kiện."
+    }
+  },
+  {
+    "id": "evt-iwa-wwce-2028",
+    "kind": "Conference",
+    "title": "IWA World Water Congress & Exhibition 2028",
+    "acronym": "IWA WWCE 2028",
+    "organizer": "International Water Association",
+    "subjects": [
+      "WATER"
+    ],
+    "tier": 2,
+    "region": "SE_ASIA",
+    "country": "MY",
+    "city": "Kuching",
+    "mode": "In-person",
+    "startDate": null,
+    "endDate": null,
+    "status": "Watchlist",
+    "milestones": [],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://iwa-network.org/news/2028-2030-world-water-congress-exhibition/"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-16",
+    "verification": "partial",
+    "conflicts": [],
+    "notes": "Host city confirmed by IWA; dates not announced. Biennial flagship water congress — the call for content will likely open in 2027 (inferred from the biennial cycle, not verified).",
+    "vi": {
+      "notes": "IWA đã xác nhận thành phố đăng cai, chưa công bố ngày. Kêu gọi bài có thể mở năm 2027 (suy luận từ chu kỳ 2 năm, chưa xác minh)."
+    }
+  }
+]

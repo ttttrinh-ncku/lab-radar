@@ -1,0 +1,6 @@
+{
+  "_comment": "Put IDs you KNOW must appear. validate.py reports recall against this list. Add 5-10 per tab from your own expertise before trusting the tool.",
+  "events": ["evt-isap-2027", "evt-algaeurope-2026", "evt-iwa-wwce-2028"],
+  "repos": [],
+  "jobs": []
+}

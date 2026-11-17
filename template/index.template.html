@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ttttrinh-ncku · Lab Radar</title>
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--ink:#1d2321;--muted:#68716d;--line:#e3e5e2;--accent:#11695a;--accent-soft:#e3f1ee;--warn:#b4441f;--warn-soft:#fbeae3;--t1:#11695a;--t2:#3d6fa8;--t3:#8a7f6a}
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;background:var(--bg);color:var(--ink)}
+header{padding:18px 24px 10px;display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;justify-content:space-between}
+h1{font-size:20px;margin:0}
+.sub{color:var(--muted);font-size:12.5px;margin-top:2px}
+.actions{display:flex;gap:6px;flex-wrap:wrap}
+select{max-width:240px}
+button,select,input[type=search],input[type=number]{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:7px;padding:6px 9px}
+button{cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+nav{display:flex;gap:4px;padding:0 24px;border-bottom:1px solid var(--line)}
+nav button{border:none;border-bottom:2px solid transparent;border-radius:0;background:none;padding:9px 12px;color:var(--muted)}
+nav button.on{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+.bar{position:sticky;top:0;z-index:2;background:var(--bg);padding:10px 24px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;border-bottom:1px solid var(--line)}
+.bar input[type=search]{min-width:220px;flex:1 1 220px}
+.bar label{display:flex;gap:4px;align-items:center;color:var(--muted);font-size:13px}
+main{padding:12px 24px 40px}
+.notice{background:var(--accent-soft);border:1px solid #c6e2dc;border-radius:8px;padding:10px 12px;margin-bottom:12px;font-size:13px}
+.notice.warn{background:var(--warn-soft);border-color:#f0c8b8}
+.count{color:var(--muted);font-size:13px;margin:4px 0 8px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);background:#fafaf8}
+tr.row{cursor:pointer}
+tr.row:hover td{background:#fbfcfb}
+td.t{font-weight:600}
+td.nw{white-space:nowrap}
+.muted{color:var(--muted)}
+.nv{color:var(--muted);font-style:italic}
+.badge{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11.5px;border:1px solid var(--line);margin:1px 2px 1px 0;white-space:nowrap}
+.tier1{background:var(--t1);color:#fff;border-color:var(--t1)}
+.tier2{background:var(--t2);color:#fff;border-color:var(--t2)}
+.tier3{background:var(--t3);color:#fff;border-color:var(--t3)}
+.soon{background:var(--warn);color:#fff;border-color:var(--warn)}
+.st-Open,.st-Active{background:var(--accent-soft);border-color:#bfe0d8}
+.st-Watchlist,.st-Unverified{background:#f3efe4}
+.st-Closed,.st-Archived,.st-Cancelled{background:#eee;color:#666}
+.review{background:#fff4d6;border-color:#f1dd9c}
+.lic-permissive{background:#e3f1ee;border-color:#bfe0d8}
+.lic-copyleft{background:#fdf0dc;border-color:#f0d39d}
+.lic-none,.lic-other{background:#f1f1f1;color:#666}
+.paper{background:#e8eef8;border-color:#c9d6ee}
+.presets{display:flex;gap:4px}
+.presets button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+tr.detail td{background:#fcfcfb;padding:12px 16px}
+dl{display:grid;grid-template-columns:190px 1fr;gap:4px 14px;margin:0}
+dt{color:var(--muted)}
+dd{margin:0;word-break:break-word}
+a{color:var(--accent)}
+.pager{display:flex;gap:6px;align-items:center;justify-content:flex-end;margin-top:10px}
+footer{padding:0 24px 30px;color:var(--muted);font-size:12px}
+@media (max-width:760px){dl{grid-template-columns:1fr}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1 data-i="title"></h1>
+    <div class="sub" id="sub"></div>
+  </div>
+  <div class="actions">
+    <button id="lang" title="EN / VI">VI</button>
+    <button id="imp" data-i="import"></button>
+    <button id="expJson" data-i="exportJson"></button>
+    <button id="expCsv" class="primary" data-i="exportCsv"></button>
+    <input type="file" id="file" accept=".json,application/json" hidden>
+  </div>
+</header>
+<nav id="tabs"></nav>
+<div class="bar" id="bar"></div>
+<main>
+  <div id="notice"></div>
+  <div class="count" id="count"></div>
+  <div id="table"></div>
+  <div class="pager" id="pager"></div>
+</main>
+<footer id="foot"></footer>
+
+<script>
+"use strict";
+const EMBED = /*__DATA__*/null;
+const DATA = EMBED || {meta:{built:"—",subjects:{},regions:{},tiers:{},deadlineAlertDays:30,includesJobs:false},events:[],repos:[],jobs:[]};
+const PAGE = 100;
+const SUBMIT = ["abstract","full_paper","special_session"];
+
+const T = {
+ en:{title:"Lab Radar — AI × Environmental Biotechnology",built:"Built",events:"Conferences & calls",repos:"Repositories",jobs:"Jobs & fellowships",
+  import:"Import JSON",exportJson:"Download JSON",exportCsv:"Download CSV (filtered)",search:"Search…",all:"All",subject:"Subject",region:"Region",tier:"Tier",status:"Status",mode:"Mode",
+  soon:"Due ≤ {d} days",sort:"Sort",nextDeadline:"Next deadline",startDate:"Start date",stars:"Stars",pushed:"Last push",deadline:"Deadline",
+  maint:"Maintenance",lang:"Language",showReview:"Include needs-review",minStars:"Min ★",name:"Name",when:"When / where",kind:"Kind",
+  nv:"Not announced / not verified",shown:"{n} of {t} shown",prev:"Prev",next:"Next",role:"Role",employer:"Employer",salary:"Salary",
+  noJobs:"Jobs are private and are not published. Open private/report_full.html locally, or import your jobs.json.",
+  noEvents:"No events yet. Run prompt A and import the JSON, or add records to data/events.json.",
+  noRepos:"No repositories yet. Run scripts/collect_repos.py (or let the weekly GitHub Action run).",
+  reviewNote:"Hidden by default: repos returned by GitHub search whose name/description/topics contain none of the required terms (usually stemming noise, e.g. PFAS→PFA). Tick “Include needs-review” to see them.",
+  sessionNote:"Imported data lives only in this tab. Download JSON before closing.",
+  verification:"Verification",source:"Source checked",urls:"Official links",conflicts:"Source conflicts",notes:"Notes",milestones:"Milestones",
+  fee:"Fee",remote:"Remote presentation",proceedings:"Proceedings",organizer:"Organizer",contact:"Contact",topics:"Topics",license:"License",
+  dois:"DOIs in README",queries:"Matched queries",first:"First seen",created:"Created",visa:"Visa / sponsorship",duration:"Duration",start:"Start",requirements:"Requirements",
+  purpose:"View",tierPushed:"Tier, then newest",noLic:"No license file — all rights reserved by default; reuse needs the author's permission",pAll:"All repos",pReuse:"Reuse in lab",pCite:"Cite in review",licClass:"License type",paperEv:"Publication evidence",arxiv:"arXiv in README",citeFile:"CITATION.cff",
+  reuseNote:"Reuse view: OSI-type license (permissive or copyleft), not archived, tier 1–2, not needs-review; tier first, then newest. A license only makes reuse legal — it says nothing about whether the code runs. Copyleft (GPL/AGPL): if lab software that incorporates it is distributed, that software must be released under the same license — check before building on it.",
+  citeNote:"Cite view: some evidence of an associated publication (CITATION.cff, DOI or arXiv in README, or a publication word in the description). Description-only evidence is weak — open the repo and confirm the paper before citing. README checks cover only part of the repos per run.",
+  foot:"Missing values are shown as “not announced / not verified”, never as 0. Always confirm on the official page before acting."},
+ vi:{title:"Lab Radar — AI × Công nghệ sinh học môi trường",built:"Cập nhật",events:"Hội nghị & kêu gọi bài",repos:"Repo",jobs:"Việc làm & học bổng",
+  import:"Nhập JSON",exportJson:"Tải JSON",exportCsv:"Tải CSV (đang lọc)",search:"Tìm…",all:"Tất cả",subject:"Chủ đề",region:"Khu vực",tier:"Tầng",status:"Trạng thái",mode:"Hình thức",
+  soon:"Hạn ≤ {d} ngày",sort:"Sắp xếp",nextDeadline:"Hạn gần nhất",startDate:"Ngày bắt đầu",stars:"Sao",pushed:"Push gần nhất",deadline:"Hạn nộp",
+  maint:"Duy trì",lang:"Ngôn ngữ",showReview:"Gồm repo cần xem lại",minStars:"★ tối thiểu",name:"Tên",when:"Thời gian / địa điểm",kind:"Loại",
+  nv:"Chưa công bố / chưa xác minh",shown:"Hiển thị {n} / {t}",prev:"Trước",next:"Sau",role:"Vị trí",employer:"Đơn vị",salary:"Lương",
+  noJobs:"Danh sách việc làm là riêng tư, không công khai. Mở private/report_full.html trên máy, hoặc nhập jobs.json.",
+  noEvents:"Chưa có sự kiện. Chạy prompt A rồi nhập JSON, hoặc thêm vào data/events.json.",
+  noRepos:"Chưa có repo. Chạy scripts/collect_repos.py (hoặc để GitHub Action chạy hằng tuần).",
+  reviewNote:"Mặc định ẩn các repo do GitHub trả về nhưng tên/mô tả/topics không chứa từ bắt buộc nào (thường là nhiễu do stemming, ví dụ PFAS→PFA). Tích “Gồm repo cần xem lại” để xem.",
+  sessionNote:"Dữ liệu nhập chỉ tồn tại trong tab này. Hãy tải JSON trước khi đóng.",
+  verification:"Mức xác minh",source:"Ngày kiểm tra nguồn",urls:"Liên kết chính thức",conflicts:"Mâu thuẫn nguồn",notes:"Ghi chú",milestones:"Các mốc",
+  fee:"Phí",remote:"Trình bày từ xa",proceedings:"Kỷ yếu",organizer:"Đơn vị tổ chức",contact:"Liên hệ",topics:"Topics",license:"Giấy phép",
+  dois:"DOI trong README",queries:"Truy vấn khớp",first:"Thấy lần đầu",created:"Tạo ngày",visa:"Visa / bảo lãnh",duration:"Thời hạn",start:"Bắt đầu",requirements:"Yêu cầu",
+  purpose:"Chế độ",tierPushed:"Tầng, rồi mới nhất",noLic:"Không có file giấy phép — mặc định giữ mọi quyền; muốn dùng lại phải xin phép tác giả",pAll:"Tất cả repo",pReuse:"Dùng cho lab",pCite:"Trích dẫn trong review",licClass:"Loại giấy phép",paperEv:"Bằng chứng có bài báo",arxiv:"arXiv trong README",citeFile:"CITATION.cff",
+  reuseNote:"Chế độ dùng cho lab: có giấy phép kiểu OSI (permissive hoặc copyleft), không archived, tầng 1–2, không cần-xem-lại; xếp theo tầng rồi mới nhất. Giấy phép chỉ cho biết được phép dùng — không cho biết code có chạy được không. Copyleft (GPL/AGPL): nếu phần mềm của lab có dùng nó và được phân phối ra ngoài thì phải công bố cùng giấy phép — kiểm tra trước khi xây dựng trên nó.",
+  citeNote:"Chế độ trích dẫn: có bằng chứng gắn với một công bố (CITATION.cff, DOI hoặc arXiv trong README, hoặc mô tả nhắc tới bài báo). Bằng chứng chỉ từ mô tả là yếu — mở repo xác nhận bài báo trước khi trích dẫn. Mỗi lần chạy chỉ kiểm tra README của một phần repo.",
+  foot:"Giá trị thiếu hiển thị “chưa công bố / chưa xác minh”, không bao giờ là 0. Luôn xác nhận trên trang chính thức trước khi hành động."}
+};
+let L = "en";
+try { L = localStorage.getItem("labradar-lang") || "en"; } catch (e) {}
+let tab = "events", page = 0, openId = null, imported = false;
+const F = {events:{q:"",subject:"",region:"",tier:"",status:"",mode:"",soon:false,sort:"next"},
+           repos:{q:"",purpose:"",subject:"",tier:"",maint:"",lang:"",review:false,minStars:0,sort:"tier"},
+           jobs:{q:"",subject:"",region:"",tier:"",status:"Active",role:"",soon:false,sort:"deadline"}};
+
+const t = (k, v={}) => (k === "title" && DATA.meta.siteTitle ? (DATA.meta.siteTitle[L] || DATA.meta.siteTitle.en) : (T[L][k] || T.en[k] || k)).replace(/\{(\w+)\}/g, (_, x) => v[x]);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const nv = () => `<span class="nv">${esc(t("nv"))}</span>`;
+const val = v => (v === null || v === undefined || v === "" || (Array.isArray(v) && !v.length)) ? nv() : esc(v);
+const lbl = (map, k) => (map && map[k] ? (map[k][L] || map[k].en) : k);
+const today = new Date(new Date().toISOString().slice(0,10));
+const days = d => d ? Math.round((new Date(d) - today) / 864e5) : null;
+const tr = (r, k) => (L === "vi" && r.vi && r.vi[k]) ? r.vi[k] : r[k];
+
+function nextDeadline(e){
+  const ms = (e.milestones||[]).filter(m => m.date && SUBMIT.includes(m.type) && days(m.date) >= 0).sort((a,b)=>a.date.localeCompare(b.date));
+  return ms[0] || null;
+}
+function deadlineBadge(date, tz){
+  if (!date) return nv();
+  const d = days(date), soon = d >= 0 && d <= DATA.meta.deadlineAlertDays;
+  return `${esc(date)}${tz?` <span class="muted">${esc(tz)}</span>`:""} ${d>=0?`<span class="badge ${soon?"soon":""}">${d}d</span>`:""}`;
+}
+const tierB = n => n ? `<span class="badge tier${n}" title="${esc(lbl(DATA.meta.tiers,String(n)))}">T${n}</span>` : "";
+const subjB = arr => (arr||[]).map(s => `<span class="badge">${esc(lbl(DATA.meta.subjects,s))}</span>`).join("");
+const stB = s => s ? `<span class="badge st-${esc(s)}">${esc(s)}</span>` : "";
+const links = u => (u||[]).length ? u.map(x => `<a href="${esc(x)}" target="_blank" rel="noopener">${esc(x)}</a>`).join("<br>") : nv();
+
+function rows(){
+  const f = F[tab], q = (f.q||"").toLowerCase();
+  let r = (DATA[tab]||[]).slice();
+  const has = (x) => JSON.stringify(x).toLowerCase().includes(q);
+  if (q) r = r.filter(has);
+  if (f.subject) r = r.filter(x => (x.subjects||[]).includes(f.subject));
+  if (f.region) r = r.filter(x => x.region === f.region);
+  if (f.tier) r = r.filter(x => String(x.tierOverride || x.tier) === f.tier);
+  if (f.status) r = r.filter(x => x.status === f.status);
+  if (f.mode) r = r.filter(x => x.mode === f.mode);
+  if (f.role) r = r.filter(x => x.roleType === f.role);
+  const A = DATA.meta.deadlineAlertDays;
+  if (tab === "events" && f.soon) r = r.filter(x => { const n = nextDeadline(x); return n && days(n.date) <= A; });
+  if (tab === "jobs" && f.soon) r = r.filter(x => x.deadline && days(x.deadline) >= 0 && days(x.deadline) <= A);
+  if (tab === "repos"){
+    if (!f.review) r = r.filter(x => !x.needsReview);
+    if (f.purpose === "reuse") r = r.filter(x => x.reusable && (x.tierOverride || x.tier) <= 2);
+    if (f.purpose === "cite") r = r.filter(x => x.hasPaper);
+    if (f.maint) r = r.filter(x => x.maintenance === f.maint);
+    if (f.lang) r = r.filter(x => x.language === f.lang);
+    if (f.minStars) r = r.filter(x => (x.stars||0) >= f.minStars);
+  }
+  const nul = "9999-12-31";
+  const by = {
+    next: (a,b) => ((nextDeadline(a)||{}).date||nul).localeCompare((nextDeadline(b)||{}).date||nul) || (a.tier-b.tier),
+    start: (a,b) => (a.startDate||nul).localeCompare(b.startDate||nul),
+    tier: (a,b) => ((a.tierOverride||a.tier)-(b.tierOverride||b.tier)) || ((b.stars||0)-(a.stars||0)),
+    stars: (a,b) => (b.stars||0)-(a.stars||0),
+    pushed: (a,b) => (b.pushedAt||"").localeCompare(a.pushedAt||""),
+    tierPushed: (a,b) => ((a.tierOverride||a.tier)-(b.tierOverride||b.tier)) || (b.pushedAt||"").localeCompare(a.pushedAt||""),
+    deadline: (a,b) => (a.deadline||nul).localeCompare(b.deadline||nul)
+  }[f.sort];
+  if (by) r.sort(by);
+  return r;
+}
+
+function opts(name, values, labeler){
+  const cur = F[tab][name];
+  return `<select data-f="${name}" title="${esc(t(name))}"><option value="">${esc(t(name))}: ${esc(t("all"))}</option>` +
+    values.map(v => `<option value="${esc(v)}" ${String(cur)===String(v)?"selected":""}>${esc(labeler?labeler(v):v)}</option>`).join("") + `</select>`;
+}
+const uniq = (k) => [...new Set((DATA[tab]||[]).map(x => x[k]).filter(Boolean))].sort();
+
+function renderBar(){
+  const f = F[tab], S = Object.keys(DATA.meta.subjects||{}), R = Object.keys(DATA.meta.regions||{});
+  let h = `<input type="search" data-f="q" placeholder="${esc(t("search"))}" value="${esc(f.q)}">`;
+  h += opts("subject", S, s => lbl(DATA.meta.subjects, s));
+  if (tab !== "repos") h += opts("region", R, s => lbl(DATA.meta.regions, s));
+  h += opts("tier", ["1","2","3"], s => "T"+s+" — "+lbl(DATA.meta.tiers, s));
+  if (tab === "events"){
+    h += opts("status", ["Announced","Open","Closed","Watchlist","Archived","Cancelled"]);
+    h += opts("mode", ["In-person","Hybrid","Online","Journal"]);
+    h += `<label><input type="checkbox" data-f="soon" ${f.soon?"checked":""}>${esc(t("soon",{d:DATA.meta.deadlineAlertDays}))}</label>`;
+    h += sortSel([["next","nextDeadline"],["start","startDate"],["tier","tier"]]);
+  } else if (tab === "repos"){
+    h = `<span class="presets">` + [["","pAll"],["reuse","pReuse"],["cite","pCite"]].map(([v,k]) => `<button data-purpose="${v}" class="${f.purpose===v?"on":""}">${esc(t(k))}</button>`).join("") + `</span>` + h;
+    h += opts("maint", ["active","stale","archived"]);
+    h += opts("lang", uniq("language"));
+    h += `<label>${esc(t("minStars"))} <input type="number" min="0" style="width:70px" data-f="minStars" value="${f.minStars||0}"></label>`;
+    h += `<label><input type="checkbox" data-f="review" ${f.review?"checked":""}>${esc(t("showReview"))}</label>`;
+    h += sortSel([["tier","tier"],["tierPushed","tierPushed"],["stars","stars"],["pushed","pushed"]]);
+  } else {
+    h += opts("status", ["Active","Closed","Unverified","Archived"]);
+    h += opts("role", ["Postdoc","Research Scientist","Assistant Professor","Research Engineer","Data Scientist","Fellowship","Other"]);
+    h += opts("mode", ["Onsite","Hybrid","Remote"]);
+    h += `<label><input type="checkbox" data-f="soon" ${f.soon?"checked":""}>${esc(t("soon",{d:DATA.meta.deadlineAlertDays}))}</label>`;
+    h += sortSel([["deadline","deadline"],["tier","tier"]]);
+  }
+  document.getElementById("bar").innerHTML = h;
+}
+function sortSel(list){
+  return `<select data-f="sort">` + list.map(([v,k]) => `<option value="${v}" ${F[tab].sort===v?"selected":""}>${esc(t("sort"))}: ${esc(t(k))}</option>`).join("") + `</select>`;
+}
+
+function detailEvent(e){
+  const ms = (e.milestones||[]).map(m => `${esc(m.type)}: ${m.date?esc(m.date):nv()}${m.tz?" ("+esc(m.tz)+")":""}${m.note?` — <span class="muted">${esc(m.note)}</span>`:""}`).join("<br>") || nv();
+  const fee = e.fee||{}, cf = (e.conflicts||[]).map(c => `<b>${esc(c.field)}</b>: ${c.values.map(esc).join(" vs ")} → ${esc(c.resolution)}`).join("<br>");
+  return `<dl>
+   <dt>${esc(t("organizer"))}</dt><dd>${val(e.organizer)}</dd>
+   <dt>${esc(t("milestones"))}</dt><dd>${ms}</dd>
+   <dt>${esc(t("fee"))}</dt><dd>${val(fee.text)}${fee.value!=null?` <span class="muted">(${esc(fee.value)} ${esc(fee.currency)}, ${esc(fee.basis)})</span>`:""}</dd>
+   <dt>${esc(t("remote"))}</dt><dd>${val(e.remotePresentation)}</dd>
+   <dt>${esc(t("proceedings"))}</dt><dd>${val((e.proceedings||{}).text)}</dd>
+   <dt>${esc(t("contact"))}</dt><dd>${val(e.contact)}</dd>
+   <dt>${esc(t("notes"))}</dt><dd>${val(tr(e,"notes"))}</dd>
+   ${cf?`<dt>${esc(t("conflicts"))}</dt><dd>${cf}</dd>`:""}
+   <dt>${esc(t("verification"))}</dt><dd>${val(e.verification)}</dd>
+   <dt>${esc(t("source"))}</dt><dd>${val(e.sourceDate)}</dd>
+   <dt>${esc(t("urls"))}</dt><dd>${links(e.urls)}</dd></dl>`;
+}
+function detailRepo(r){
+  return `<dl>
+   <dt>${esc(t("topics"))}</dt><dd>${(r.topics||[]).length?r.topics.map(x=>`<span class="badge">${esc(x)}</span>`).join(""):nv()}</dd>
+   <dt>${esc(t("license"))}</dt><dd>${r.license ? esc(r.license)+` <span class="muted">(${esc(r.licenseClass)})</span>` : `<span class="nv">${esc(t("noLic"))}</span>`}</dd>
+   <dt>${esc(t("paperEv"))}</dt><dd>${(r.paperEvidence||[]).length?r.paperEvidence.map(esc).join("; "):nv()}</dd>
+   ${(r.linkedArxiv||[]).length?`<dt>${esc(t("arxiv"))}</dt><dd>${r.linkedArxiv.map(a=>`<a href="https://arxiv.org/abs/${esc(a)}" target="_blank" rel="noopener">${esc(a)}</a>`).join("<br>")}</dd>`:""}
+   <dt>${esc(t("created"))}</dt><dd>${val(r.createdAt)}</dd>
+   <dt>${esc(t("dois"))}</dt><dd>${(r.linkedDOIs||[]).length?r.linkedDOIs.map(d=>`<a href="https://doi.org/${esc(d)}" target="_blank" rel="noopener">${esc(d)}</a>`).join("<br>"):nv()}</dd>
+   <dt>${esc(t("queries"))}</dt><dd>${(r.matchedQueries||[]).map(esc).join("<br>")}</dd>
+   <dt>${esc(t("first"))}</dt><dd>${val(r.firstSeen)}</dd>
+   ${r.notes?`<dt>${esc(t("notes"))}</dt><dd>${esc(r.notes)}</dd>`:""}
+   <dt>${esc(t("urls"))}</dt><dd>${links([r.url])}</dd></dl>`;
+}
+function detailJob(j){
+  const s = j.salary||{};
+  return `<dl>
+   <dt>${esc(t("employer"))}</dt><dd>${val([j.employer,j.unit].filter(Boolean).join(" — "))}</dd>
+   <dt>${esc(t("salary"))}</dt><dd>${val(s.text)}${s.value!=null?` <span class="muted">(${esc(s.value)} ${esc(s.currency)}/${esc(s.period)}, ${esc(s.basis)})</span>`:""}</dd>
+   <dt>${esc(t("start"))}</dt><dd>${val(j.start)}</dd>
+   <dt>${esc(t("duration"))}</dt><dd>${val(j.duration)}</dd>
+   <dt>${esc(t("visa"))}</dt><dd>${val(j.visa)}</dd>
+   <dt>${esc(t("requirements"))}</dt><dd>${val(tr(j,"requirements"))}</dd>
+   <dt>${esc(t("notes"))}</dt><dd>${val(tr(j,"notes"))}</dd>
+   <dt>${esc(t("verification"))}</dt><dd>${val(j.verification)}</dd>
+   <dt>${esc(t("source"))}</dt><dd>${val(j.sourceDate)}</dd>
+   <dt>${esc(t("urls"))}</dt><dd>${links(j.urls)}</dd></dl>`;
+}
+
+function renderTable(){
+  const all = rows(), total = (DATA[tab]||[]).length, pages = Math.max(1, Math.ceil(all.length / PAGE));
+  if (page >= pages) page = pages - 1;
+  const r = all.slice(page*PAGE, page*PAGE+PAGE);
+  let head, body;
+  if (tab === "events"){
+    head = [t("name"),t("when"),t("nextDeadline"),t("status"),t("subject")];
+    body = r.map(e => { const n = nextDeadline(e), where = [e.city, e.country].filter(Boolean).join(", ");
+      return [e.id, `<td class="t">${tierB(e.tier)} ${esc(tr(e,"title"))}<div class="muted">${esc(e.acronym||"")} · ${esc(e.kind)}</div></td>
+      <td>${e.startDate?esc(e.startDate)+(e.endDate?" → "+esc(e.endDate):""):nv()}<div class="muted">${esc(where)} · ${esc(lbl(DATA.meta.regions,e.region))} · ${esc(e.mode)}</div></td>
+      <td>${n?deadlineBadge(n.date,n.tz)+`<div class="muted">${esc(n.type)}</div>`:nv()}</td>
+      <td>${stB(e.status)}</td><td class="hide-sm">${subjB(e.subjects)}</td>`, detailEvent]; });
+  } else if (tab === "repos"){
+    head = [t("name"),t("stars"),t("pushed"),t("maint"),t("subject")];
+    body = r.map(x => [x.id, `<td class="t">${tierB(x.tierOverride||x.tier)} <a href="${esc(x.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(x.fullName)}</a>${x.needsReview?' <span class="badge review">review</span>':""}
+      <span class="badge lic-${esc(x.licenseClass||"none")}" title="${esc(x.license||"")}">${esc(x.license||"no license")}</span>${x.hasPaper?` <span class="badge paper" title="${esc((x.paperEvidence||[]).join("; "))}">paper</span>`:""}
+      <div class="muted" style="font-weight:400">${esc(x.description||"")}</div></td>
+      <td class="nw">★ ${esc(x.stars)}</td><td class="nw">${val(x.pushedAt)}<div class="muted">${esc(x.language||"")}</div></td><td>${stB(x.maintenance)}</td><td class="hide-sm">${subjB(x.subjects)}</td>`, detailRepo]);
+  } else {
+    head = [t("role"),t("employer"),t("deadline"),t("status"),t("subject")];
+    body = r.map(j => [j.id, `<td class="t">${tierB(j.tier)} ${esc(tr(j,"title"))}<div class="muted">${esc(j.roleType)} · ${esc(j.mode)}</div></td>
+      <td>${val(j.employer)}<div class="muted">${esc([j.city,j.country].filter(Boolean).join(", "))} · ${esc(lbl(DATA.meta.regions,j.region))}</div></td>
+      <td>${deadlineBadge(j.deadline,j.tz)}</td><td>${stB(j.status)}</td><td class="hide-sm">${subjB(j.subjects)}</td>`, detailJob]);
+  }
+  const html = `<table><thead><tr>${head.map((h,i)=>`<th class="${i===4?"hide-sm":""}">${esc(h)}</th>`).join("")}</tr></thead><tbody>` +
+    body.map(([id, cells, det]) => { const rec = r.find(x => x.id === id);
+      return `<tr class="row" data-id="${esc(id)}">${cells}</tr>` + (openId === id ? `<tr class="detail"><td colspan="5">${det(rec)}</td></tr>` : ""); }).join("") +
+    `</tbody></table>`;
+  document.getElementById("table").innerHTML = all.length ? html : "";
+  document.getElementById("count").textContent = t("shown", {n: all.length, t: total});
+  document.getElementById("pager").innerHTML = pages > 1 ? `<button data-p="-1" ${page===0?"disabled":""}>${esc(t("prev"))}</button><span class="muted">${page+1} / ${pages}</span><button data-p="1" ${page>=pages-1?"disabled":""}>${esc(t("next"))}</button>` : "";
+  let n = "";
+  if (imported) n += `<div class="notice warn">${esc(t("sessionNote"))}</div>`;
+  if (tab === "jobs" && !DATA.jobs.length) n += `<div class="notice">${esc(t("noJobs"))}</div>`;
+  if (tab === "events" && !DATA.events.length) n += `<div class="notice">${esc(t("noEvents"))}</div>`;
+  if (tab === "repos" && !DATA.repos.length) n += `<div class="notice">${esc(t("noRepos"))}</div>`;
+  if (tab === "repos" && F.repos.purpose === "reuse") n += `<div class="notice">${esc(t("reuseNote"))}</div>`;
+  else if (tab === "repos" && F.repos.purpose === "cite") n += `<div class="notice">${esc(t("citeNote"))}</div>`;
+  else if (tab === "repos" && DATA.repos.length && !F.repos.review) n += `<div class="notice">${esc(t("reviewNote"))}</div>`;
+  document.getElementById("notice").innerHTML = n;
+}
+
+function renderAll(){
+  document.documentElement.lang = L;
+  document.title = t("title");
+  document.querySelectorAll("[data-i]").forEach(el => el.textContent = t(el.dataset.i));
+  document.getElementById("lang").textContent = L === "en" ? "Tiếng Việt" : "English";
+  document.getElementById("sub").textContent = `${t("built")}: ${DATA.meta.built}${DATA.meta.owner ? " · " + DATA.meta.owner : ""}`;
+  document.getElementById("tabs").innerHTML = ["events","repos","jobs"].map(k =>
+    `<button data-tab="${k}" class="${tab===k?"on":""}">${esc(t(k))} <span class="muted">${(DATA[k]||[]).length}</span></button>`).join("");
+  document.getElementById("foot").textContent = t("foot");
+  renderBar(); renderTable();
+}
+
+document.addEventListener("click", ev => {
+  const b = ev.target.closest("[data-tab]");
+  if (b){ tab = b.dataset.tab; page = 0; openId = null; renderAll(); return; }
+  const pr = ev.target.closest("[data-purpose]");
+  if (pr){ F.repos.purpose = pr.dataset.purpose; F.repos.sort = pr.dataset.purpose === "reuse" ? "tierPushed" : "tier"; page = 0; openId = null; renderBar(); renderTable(); return; }
+  const p = ev.target.closest("[data-p]");
+  if (p){ page += +p.dataset.p; openId = null; renderTable(); window.scrollTo(0,0); return; }
+  const row = ev.target.closest("tr.row");
+  if (row && !ev.target.closest("a")){ openId = openId === row.dataset.id ? null : row.dataset.id; renderTable(); }
+});
+document.getElementById("bar").addEventListener("input", ev => {
+  const k = ev.target.dataset.f; if (!k) return;
+  const v = ev.target.type === "checkbox" ? ev.target.checked : ev.target.type === "number" ? (+ev.target.value || 0) : ev.target.value;
+  F[tab][k] = v; page = 0; openId = null; renderTable();
+});
+document.getElementById("lang").onclick = () => { L = L === "en" ? "vi" : "en"; try { localStorage.setItem("labradar-lang", L); } catch (e) {} renderAll(); };
+document.getElementById("imp").onclick = () => document.getElementById("file").click();
+document.getElementById("file").onchange = async ev => {
+  const f = ev.target.files[0]; if (!f) return;
+  try {
+    const j = JSON.parse(await f.text());
+    if (Array.isArray(j)) DATA[tab] = j;  // a bare array replaces the current tab
+    else ["events","repos","jobs"].forEach(k => { if (Array.isArray(j[k])) DATA[k] = j[k]; });
+    imported = true; page = 0; renderAll();
+  } catch (e) { alert("Invalid JSON: " + e.message); }
+  ev.target.value = "";
+};
+function download(name, text, type){
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([text], {type}));
+  a.download = name; document.body.appendChild(a); a.click(); a.remove();
+}
+const stamp = () => new Date().toISOString().slice(0,10);
+document.getElementById("expJson").onclick = () => download(`lab-radar-${stamp()}.json`, JSON.stringify({meta:DATA.meta,events:DATA.events,repos:DATA.repos,jobs:DATA.jobs}, null, 1), "application/json");
+document.getElementById("expCsv").onclick = () => {
+  const cols = {events:["id","title","acronym","kind","tier","subjects","region","country","city","mode","startDate","endDate","status","nextDeadline","verification","sourceDate","urls"],
+    repos:["id","fullName","url","tier","subjects","stars","language","license","licenseClass","reusable","pushedAt","maintenance","hasPaper","paperEvidence","linkedDOIs","linkedArxiv","needsReview","firstSeen"],
+    jobs:["id","title","employer","roleType","tier","subjects","region","country","mode","status","deadline","tz","verification","sourceDate","urls"]}[tab];
+  const cell = v => { const s = Array.isArray(v) ? v.join("; ") : (v ?? ""); return /[",\n]/.test(String(s)) ? `"${String(s).replace(/"/g,'""')}"` : String(s); };
+  const lines = [cols.join(",")].concat(rows().map(r => cols.map(c => cell(c === "nextDeadline" ? (nextDeadline(r)||{}).date : r[c])).join(",")));
+  download(`lab-radar-${tab}-${stamp()}.csv`, "﻿" + lines.join("\n"), "text/csv");
+};
+renderAll();
+</script>
+</body>
+</html>

@@ -1,0 +1,573 @@
+{
+  "_comment": "Research brief for Lab Radar. Machine-read by scripts/collect_repos.py and scripts/validate.py; human-read by the prompts in prompts/PROMPTS_VI.md. Edit freely.",
+  "owner": "ttttrinh-ncku · NCKU (Gojobori Lab)",
+  "siteTitle": {
+    "en": "ttttrinh-ncku · Lab Radar — AI × Environmental Biotechnology",
+    "vi": "ttttrinh-ncku · Lab Radar — AI × Công nghệ sinh học môi trường"
+  },
+  "timezone": "Asia/Taipei",
+  "rollingWindowMonths": 18,
+  "deadlineAlertDays": 30,
+  "staleSourceDays": 30,
+  "subjects": {
+    "WATER": {
+      "en": "Water & Wastewater",
+      "vi": "Nước & nước thải"
+    },
+    "ALGAE": {
+      "en": "Algal Biotechnology",
+      "vi": "Công nghệ sinh học vi tảo"
+    },
+    "AI_ENV": {
+      "en": "AI / Digital Twin / AIoT for Environment",
+      "vi": "AI / Digital twin / AIoT cho môi trường"
+    },
+    "ENV_BIOINFO": {
+      "en": "Environmental Bioinformatics & Metagenomics",
+      "vi": "Tin sinh học môi trường & metagenomics"
+    },
+    "CARBON_PFAS": {
+      "en": "Carbon Capture & PFAS",
+      "vi": "Thu giữ carbon & PFAS"
+    },
+    "OCEAN": {
+      "en": "Smart Ocean / eDNA",
+      "vi": "Đại dương thông minh / eDNA"
+    }
+  },
+  "tiers": {
+    "1": {
+      "en": "Core: AI × microalgae / wastewater bioreactors",
+      "vi": "Cốt lõi: AI × vi tảo / bioreactor nước thải"
+    },
+    "2": {
+      "en": "Adjacent: process biotech, PFAS, carbon, wastewater microbiome",
+      "vi": "Lân cận: quá trình sinh học, PFAS, carbon, vi sinh nước thải"
+    },
+    "3": {
+      "en": "Peripheral: environmental bioinformatics, ocean, eDNA",
+      "vi": "Ngoại vi: tin sinh học môi trường, đại dương, eDNA"
+    }
+  },
+  "regions": {
+    "TW": {
+      "en": "Taiwan",
+      "vi": "Đài Loan"
+    },
+    "VN": {
+      "en": "Vietnam",
+      "vi": "Việt Nam"
+    },
+    "EAST_ASIA": {
+      "en": "East Asia (JP, KR, CN, HK)",
+      "vi": "Đông Á (Nhật, Hàn, TQ, HK)"
+    },
+    "SE_ASIA": {
+      "en": "Southeast Asia",
+      "vi": "Đông Nam Á"
+    },
+    "OCEANIA": {
+      "en": "Oceania",
+      "vi": "Châu Đại Dương"
+    },
+    "EUROPE": {
+      "en": "Europe (excl. Nordic)",
+      "vi": "Châu Âu (trừ Bắc Âu)"
+    },
+    "NORDIC": {
+      "en": "Nordic (DK, SE, NO, FI, IS)",
+      "vi": "Bắc Âu (DK, SE, NO, FI, IS)"
+    },
+    "NORTH_AMERICA": {
+      "en": "North America (US, CA)",
+      "vi": "Bắc Mỹ (Mỹ, Canada)"
+    },
+    "LATIN_AMERICA": {
+      "en": "Latin America",
+      "vi": "Mỹ Latinh"
+    },
+    "MEA": {
+      "en": "Middle East & Africa",
+      "vi": "Trung Đông & châu Phi"
+    },
+    "ONLINE": {
+      "en": "Online / Global",
+      "vi": "Trực tuyến / Toàn cầu"
+    }
+  },
+  "nordicCountries": [
+    "DK",
+    "SE",
+    "NO",
+    "FI",
+    "IS"
+  ],
+  "jobRoles": [
+    "Postdoc",
+    "Research Scientist",
+    "Assistant Professor",
+    "Research Engineer",
+    "Data Scientist",
+    "Fellowship",
+    "Other"
+  ],
+  "repoSearch": {
+    "pagesPerQuery": 2,
+    "perPage": 100,
+    "minStars": 0,
+    "activeMonths": 12,
+    "readmeDoiCheckLimit": 1000,
+    "queries": [
+      {
+        "q": "microalgae \"machine learning\"",
+        "tier": 1,
+        "subjects": [
+          "ALGAE",
+          "AI_ENV"
+        ],
+        "mustMatchAny": [
+          "microalga",
+          "algae",
+          "algal"
+        ]
+      },
+      {
+        "q": "microalgae \"deep learning\"",
+        "tier": 1,
+        "subjects": [
+          "ALGAE",
+          "AI_ENV"
+        ],
+        "mustMatchAny": [
+          "microalga",
+          "algae",
+          "algal"
+        ]
+      },
+      {
+        "q": "photobioreactor",
+        "tier": 1,
+        "subjects": [
+          "ALGAE"
+        ],
+        "mustMatchAny": [
+          "photobioreactor",
+          "algae",
+          "algal",
+          "microalga",
+          "cyanobacteri"
+        ]
+      },
+      {
+        "q": "topic:microalgae",
+        "tier": 1,
+        "subjects": [
+          "ALGAE"
+        ],
+        "mustMatchAny": [
+          "microalga",
+          "algae",
+          "algal"
+        ]
+      },
+      {
+        "q": "algae growth model",
+        "tier": 1,
+        "subjects": [
+          "ALGAE"
+        ],
+        "mustMatchAny": [
+          "alga"
+        ]
+      },
+      {
+        "q": "wastewater \"machine learning\"",
+        "tier": 1,
+        "subjects": [
+          "WATER",
+          "AI_ENV"
+        ],
+        "mustMatchAny": [
+          "wastewater",
+          "sewage",
+          "effluent",
+          "wwtp"
+        ]
+      },
+      {
+        "q": "wastewater \"deep learning\"",
+        "tier": 1,
+        "subjects": [
+          "WATER",
+          "AI_ENV"
+        ],
+        "mustMatchAny": [
+          "wastewater",
+          "sewage",
+          "effluent",
+          "wwtp"
+        ]
+      },
+      {
+        "q": "wastewater \"digital twin\"",
+        "tier": 1,
+        "subjects": [
+          "WATER",
+          "AI_ENV"
+        ],
+        "mustMatchAny": [
+          "wastewater",
+          "wwtp",
+          "treatment"
+        ]
+      },
+      {
+        "q": "wastewater \"soft sensor\"",
+        "tier": 1,
+        "subjects": [
+          "WATER",
+          "AI_ENV"
+        ],
+        "mustMatchAny": [
+          "wastewater",
+          "wwtp",
+          "sensor"
+        ]
+      },
+      {
+        "q": "WWTP prediction",
+        "tier": 1,
+        "subjects": [
+          "WATER",
+          "AI_ENV"
+        ],
+        "mustMatchAny": [
+          "wwtp",
+          "wastewater"
+        ]
+      },
+      {
+        "q": "bioreactor \"reinforcement learning\"",
+        "tier": 1,
+        "subjects": [
+          "AI_ENV"
+        ],
+        "mustMatchAny": [
+          "bioreactor",
+          "bioprocess",
+          "fermentation"
+        ]
+      },
+      {
+        "q": "\"activated sludge\" model",
+        "tier": 2,
+        "subjects": [
+          "WATER"
+        ],
+        "mustMatchAny": [
+          "activated sludge",
+          "asm1",
+          "asm2",
+          "asm3",
+          "bsm1",
+          "bsm2"
+        ]
+      },
+      {
+        "q": "BSM1 benchmark simulation",
+        "tier": 2,
+        "subjects": [
+          "WATER",
+          "AI_ENV"
+        ],
+        "mustMatchAny": [
+          "bsm1",
+          "bsm2",
+          "benchmark simulation",
+          "activated sludge"
+        ]
+      },
+      {
+        "q": "\"membrane bioreactor\"",
+        "tier": 2,
+        "subjects": [
+          "WATER"
+        ],
+        "mustMatchAny": [
+          "membrane bioreactor",
+          "mbr\\b",
+          "fouling"
+        ]
+      },
+      {
+        "q": "\"anaerobic digestion\" model",
+        "tier": 2,
+        "subjects": [
+          "WATER"
+        ],
+        "mustMatchAny": [
+          "anaerobic digestion",
+          "adm1",
+          "biogas"
+        ]
+      },
+      {
+        "q": "topic:wastewater",
+        "tier": 2,
+        "subjects": [
+          "WATER"
+        ],
+        "mustMatchAny": [
+          "wastewater",
+          "sewage",
+          "wwtp",
+          "effluent",
+          "sludge"
+        ]
+      },
+      {
+        "q": "\"water quality\" prediction lstm",
+        "tier": 2,
+        "subjects": [
+          "WATER",
+          "AI_ENV"
+        ],
+        "mustMatchAny": [
+          "water quality",
+          "water"
+        ]
+      },
+      {
+        "q": "\"PFAS\" water",
+        "tier": 2,
+        "subjects": [
+          "CARBON_PFAS"
+        ],
+        "mustMatchAny": [
+          "pfas\\b",
+          "perfluoro",
+          "polyfluoro",
+          "pfoa\\b",
+          "pfos\\b"
+        ]
+      },
+      {
+        "q": "perfluoroalkyl",
+        "tier": 2,
+        "subjects": [
+          "CARBON_PFAS"
+        ],
+        "mustMatchAny": [
+          "pfas\\b",
+          "perfluoro",
+          "polyfluoro",
+          "pfoa\\b",
+          "pfos\\b"
+        ]
+      },
+      {
+        "q": "\"carbon capture\" algae",
+        "tier": 2,
+        "subjects": [
+          "CARBON_PFAS",
+          "ALGAE"
+        ],
+        "mustMatchAny": [
+          "carbon capture",
+          "co2",
+          "alga"
+        ]
+      },
+      {
+        "q": "wastewater metagenomics",
+        "tier": 2,
+        "subjects": [
+          "ENV_BIOINFO",
+          "WATER"
+        ],
+        "mustMatchAny": [
+          "wastewater",
+          "sewage",
+          "sludge",
+          "metagenom"
+        ]
+      },
+      {
+        "q": "\"environmental metagenomics\" pipeline",
+        "tier": 3,
+        "subjects": [
+          "ENV_BIOINFO"
+        ],
+        "mustMatchAny": [
+          "metagenom"
+        ]
+      },
+      {
+        "q": "eDNA metabarcoding",
+        "tier": 3,
+        "subjects": [
+          "OCEAN",
+          "ENV_BIOINFO"
+        ],
+        "mustMatchAny": [
+          "edna",
+          "metabarcod",
+          "environmental dna"
+        ]
+      },
+      {
+        "q": "\"harmful algal bloom\" prediction",
+        "tier": 3,
+        "subjects": [
+          "OCEAN",
+          "ALGAE",
+          "AI_ENV"
+        ],
+        "mustMatchAny": [
+          "algal bloom",
+          "habs?\\b",
+          "cyanobacteri"
+        ]
+      },
+      {
+        "q": "phytoplankton classification",
+        "tier": 3,
+        "subjects": [
+          "OCEAN",
+          "ALGAE",
+          "AI_ENV"
+        ],
+        "mustMatchAny": [
+          "phytoplankton",
+          "plankton",
+          "diatom"
+        ]
+      }
+    ],
+    "_matchRule": "mustMatchAny entries are regular expressions matched case-insensitively against name+description+topics, with an implicit leading word boundary (so 'microalga' matches 'microalgae', 'pfas\\\\b' does not match 'pfast'). No match -> needsReview=true (hidden by default in the page)."
+  },
+  "sourceLeads": {
+    "_comment": "Entry points for prompts A/B. LEADS, NOT PROOF: every record must be verified on the organizer's/employer's own page. Domains marked check:true have not been confirmed by Claude and must be checked before use.",
+    "events": {
+      "ONLINE": [
+        "iwa-network.org",
+        "worldwatercongress.org",
+        "appliedphycologysoc.org",
+        "climatechange.ai",
+        "iscb.org",
+        "isme-microbes.org"
+      ],
+      "EUROPE": [
+        "eaba-association.org",
+        "iwa-network.org (specialist conferences: Watermatex, ICA, LET, MEWE)",
+        "euraxess.ec.europa.eu (events)"
+      ],
+      "NORDIC": [
+        "dtu.dk",
+        "kth.se",
+        "chalmers.se",
+        "lu.se",
+        "ntnu.edu",
+        "aalto.fi",
+        "nordforsk.org"
+      ],
+      "NORTH_AMERICA": [
+        "algaebiomass.org",
+        "wef.org (WEFTEC)",
+        "acs.org",
+        "pnnl.gov"
+      ],
+      "LATIN_AMERICA": [
+        "fapesp.br (São Paulo School of Advanced Science)"
+      ],
+      "OCEANIA": [
+        "appliedphycologysoc.org (ISAP 2027 Perth)",
+        "csiro.au"
+      ],
+      "TW": [
+        "nstc.gov.tw",
+        "ncku.edu.tw",
+        {
+          "domain": "cienve.org.tw",
+          "check": true
+        }
+      ],
+      "VN": [
+        "nafosted.gov.vn",
+        {
+          "domain": "vast.vn",
+          "check": true
+        }
+      ],
+      "EAST_ASIA": [
+        "jsps.go.jp",
+        "nrf.re.kr"
+      ],
+      "SE_ASIA": [
+        "a-star.edu.sg",
+        "nus.edu.sg",
+        "ntu.edu.sg"
+      ]
+    },
+    "jobs": {
+      "EUROPE": [
+        "euraxess.ec.europa.eu",
+        "marie-sklodowska-curie-actions.ec.europa.eu",
+        "jobs.ac.uk",
+        "academictransfer.com",
+        "academics.de",
+        "eawag.ch",
+        "wetsus.eu",
+        "kwrwater.nl",
+        "humboldt-foundation.de",
+        "daad.de",
+        "academicpositions.com"
+      ],
+      "NORDIC": [
+        "jobbnorge.no",
+        "dtu.dk",
+        "kth.se",
+        "chalmers.se",
+        "lu.se",
+        "uu.se",
+        "ntnu.edu",
+        "aalto.fi",
+        "helsinki.fi"
+      ],
+      "NORTH_AMERICA": [
+        "jobs.sciencecareers.org",
+        "nature.com/naturecareers",
+        "higheredjobs.com",
+        "pnnl.gov",
+        "waterrf.org",
+        "nserc-crsng.gc.ca",
+        "mitacs.ca"
+      ],
+      "LATIN_AMERICA": [
+        "fapesp.br"
+      ],
+      "OCEANIA": [
+        "csiro.au",
+        "murdoch.edu.au"
+      ],
+      "TW": [
+        "nstc.gov.tw",
+        "ncku.edu.tw",
+        "sinica.edu.tw"
+      ],
+      "VN": [
+        "nafosted.gov.vn"
+      ],
+      "EAST_ASIA": [
+        "jsps.go.jp",
+        "nrf.re.kr",
+        "jrecin.jst.go.jp"
+      ],
+      "SE_ASIA": [
+        "a-star.edu.sg",
+        "nus.edu.sg",
+        "ntu.edu.sg"
+      ]
+    }
+  }
+}

@@ -1,0 +1,4 @@
+# Jobs stay private: never commit your job list to a public repo
+data/jobs.json
+private/
+__pycache__/
