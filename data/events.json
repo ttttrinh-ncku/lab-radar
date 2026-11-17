@@ -611,5 +611,212 @@
     "vi": {
       "notes": "Sự kiện số hóa ngành nước, thiên về doanh nghiệp, diễn ra tuần sau. Hữu ích để kết nối công ty về digital twin/AIoT."
     }
+  },
+  {
+    "id": "evt-ismpmi-2027",
+    "kind": "Conference",
+    "title": "22nd International Congress on Molecular Plant-Microbe Interactions",
+    "acronym": "IS-MPMI 2027",
+    "organizer": "International Society for Molecular Plant-Microbe Interactions",
+    "subjects": [
+      "PLANT_MICROBE"
+    ],
+    "tier": 2,
+    "region": "EAST_ASIA",
+    "country": "KR",
+    "city": "Jeju",
+    "mode": "In-person",
+    "startDate": "2027-07-18",
+    "endDate": "2027-07-22",
+    "status": "Announced",
+    "milestones": [
+      {
+        "type": "special_session",
+        "date": "2026-09-25",
+        "tz": null,
+        "note": "Concurrent session proposals (passed); pre-congress satellite proposals being accepted"
+      },
+      {
+        "type": "abstract",
+        "date": null,
+        "tz": null,
+        "note": null
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://ismpmi.org/events/2027-is-mpmi-congress/"
+    ],
+    "contact": "contact@ismpmi.org",
+    "sourceDate": "2026-11-17",
+    "verification": "partial",
+    "conflicts": [],
+    "notes": "Premier biennial plant–microbe congress (>1,000 attendees). Opening keynote by Sophien Kamoun on AI-guided studies of plant immunity — a signal that AI × plant–microbe is entering the mainstream programme. Abstract deadline not yet announced.",
+    "vi": {
+      "notes": "Hội nghị tương tác thực vật–vi sinh vật lớn nhất (2 năm/lần). Keynote mở màn về AI trong nghiên cứu miễn dịch thực vật. Chưa có hạn nộp tóm tắt."
+    }
+  },
+  {
+    "id": "evt-biostimulants-wc-2026",
+    "kind": "Conference",
+    "title": "9th Biostimulants World Congress",
+    "acronym": "BWC 2026",
+    "organizer": "New AG International / Informa, in association with EBIC",
+    "subjects": [
+      "PLANT_MICROBE"
+    ],
+    "tier": 2,
+    "region": "NORTH_AMERICA",
+    "country": "US",
+    "city": "Sacramento (SAFE Credit Union Convention Center)",
+    "mode": "Hybrid",
+    "startDate": "2026-11-30",
+    "endDate": "2026-12-03",
+    "status": "Closed",
+    "milestones": [
+      {
+        "type": "registration",
+        "date": null,
+        "tz": null,
+        "note": "Paper call closed; registration still possible (in-person or digital)"
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://informaconnect.com/biostimulants-world-congress/",
+      "https://informaconnect.com/biostimulants-world-congress/call-for-papers"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-17",
+    "verification": "partial",
+    "conflicts": [],
+    "notes": "World's largest biostimulant event; scientific and commercial streams; workshops 30 Nov, conference 1–3 Dec. Themes include microbial biostimulants, efficacy testing/crop phenotyping, and biostimulants with precision agriculture. Hybrid — digital attendance possible from Taiwan. Next edition location/date not verified.",
+    "vi": {
+      "notes": "Sự kiện biostimulant lớn nhất thế giới; có hình thức trực tuyến nên có thể tham dự từ Đài Loan. Đã hết hạn nộp bài; vẫn đăng ký tham dự được."
+    }
+  },
+  {
+    "id": "evt-keystone-pmes-2027",
+    "kind": "Conference",
+    "title": "Keystone Symposium: Plant and Microbe Engineering for Sustainability",
+    "acronym": "Keystone N2 2027",
+    "organizer": "Keystone Symposia (organizers: D. F. Voytas, R. Bock, J. Pett-Ridge)",
+    "subjects": [
+      "PLANT_MICROBE"
+    ],
+    "tier": 2,
+    "region": "NORTH_AMERICA",
+    "country": "CA",
+    "city": "Vancouver (Fairmont Hotel Vancouver)",
+    "mode": "Hybrid",
+    "startDate": "2027-05-02",
+    "endDate": "2027-05-05",
+    "status": "Announced",
+    "milestones": [
+      {
+        "type": "early_bird",
+        "date": "2027-03-03",
+        "tz": null,
+        "note": null
+      },
+      {
+        "type": "abstract",
+        "date": null,
+        "tz": null,
+        "note": "Abstract deadline not shown on programme page"
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://www.keystonesymposia.org/conferences/conference-listing/meeting/onpage-program/N22027"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-17",
+    "verification": "partial",
+    "conflicts": [],
+    "notes": "Sessions on engineering plant–microbe interactions and the rhizosphere for agricultural sustainability; short talks chosen from abstracts; livestream available. No biostimulant/VOC session by name.",
+    "vi": {
+      "notes": "Có phiên về kỹ thuật tương tác thực vật–vi sinh vật và vùng rễ; có livestream. Không có phiên riêng về biostimulant/VOC."
+    }
+  },
+  {
+    "id": "evt-egu-2027",
+    "kind": "Conference",
+    "title": "EGU General Assembly 2027 — session BG1: Volatile Organic Compounds at the Biosphere-Atmosphere Interface",
+    "acronym": "EGU27",
+    "organizer": "European Geosciences Union",
+    "subjects": [
+      "PLANT_MICROBE",
+      "CARBON_PFAS"
+    ],
+    "tier": 3,
+    "region": "EUROPE",
+    "country": "AT",
+    "city": "Vienna (Austria Center Vienna)",
+    "mode": "Hybrid",
+    "startDate": "2027-04-04",
+    "endDate": "2027-04-09",
+    "status": "Open",
+    "milestones": [
+      {
+        "type": "abstract",
+        "date": "2027-01-12",
+        "tz": "Europe/Vienna",
+        "note": "From a third-party listing; EGU usually sets 13:00 CET — confirm on egu27.eu. First authors must be EGU members; abstract processing charge applies."
+      }
+    ],
+    "remotePresentation": "yes",
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://meetingorganizer.copernicus.org/EGU27/session/61380",
+      "https://meetingorganizer.copernicus.org/EGU27/sessionprogramme/pg-selection"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-17",
+    "verification": "partial",
+    "conflicts": [],
+    "notes": "Relevant session on plant/soil/biogenic VOC emissions, analytical methods and modelling. Atmosphere-oriented rather than plant–microbe signalling, but a large hybrid venue with low barriers.",
+    "vi": {
+      "notes": "Phiên về phát thải VOC từ thực vật/đất, phương pháp phân tích và mô hình hóa. Thiên về khí quyển hơn là tín hiệu thực vật–vi sinh vật. Hình thức lai, dễ tham gia."
+    }
   }
 ]
