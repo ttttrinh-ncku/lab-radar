@@ -1,573 +1,822 @@
-{
-  "_comment": "Research brief for Lab Radar. Machine-read by scripts/collect_repos.py and scripts/validate.py; human-read by the prompts in prompts/PROMPTS_VI.md. Edit freely.",
-  "owner": "ttttrinh",
-  "siteTitle": {
-    "en": "ttttrinh",
-    "vi": "ttttrinh"
-  },
-  "timezone": "Asia/Taipei",
-  "rollingWindowMonths": 18,
-  "deadlineAlertDays": 30,
-  "staleSourceDays": 30,
-  "subjects": {
-    "WATER": {
-      "en": "Water & Wastewater",
-      "vi": "Nước & nước thải"
-    },
-    "ALGAE": {
-      "en": "Algal Biotechnology",
-      "vi": "Công nghệ sinh học vi tảo"
-    },
-    "AI_ENV": {
-      "en": "AI / Digital Twin / AIoT for Environment",
-      "vi": "AI / Digital twin / AIoT cho môi trường"
-    },
-    "ENV_BIOINFO": {
-      "en": "Environmental Bioinformatics & Metagenomics",
-      "vi": "Tin sinh học môi trường & metagenomics"
-    },
-    "CARBON_PFAS": {
-      "en": "Carbon Capture & PFAS",
-      "vi": "Thu giữ carbon & PFAS"
-    },
-    "OCEAN": {
-      "en": "Smart Ocean / eDNA",
-      "vi": "Đại dương thông minh / eDNA"
-    }
-  },
-  "tiers": {
-    "1": {
-      "en": "Core: AI × microalgae / wastewater bioreactors",
-      "vi": "Cốt lõi: AI × vi tảo / bioreactor nước thải"
-    },
-    "2": {
-      "en": "Adjacent: process biotech, PFAS, carbon, wastewater microbiome",
-      "vi": "Lân cận: quá trình sinh học, PFAS, carbon, vi sinh nước thải"
-    },
-    "3": {
-      "en": "Peripheral: environmental bioinformatics, ocean, eDNA",
-      "vi": "Ngoại vi: tin sinh học môi trường, đại dương, eDNA"
-    }
-  },
-  "regions": {
-    "TW": {
-      "en": "Taiwan",
-      "vi": "Đài Loan"
-    },
-    "VN": {
-      "en": "Vietnam",
-      "vi": "Việt Nam"
-    },
-    "EAST_ASIA": {
-      "en": "East Asia (JP, KR, CN, HK)",
-      "vi": "Đông Á (Nhật, Hàn, TQ, HK)"
-    },
-    "SE_ASIA": {
-      "en": "Southeast Asia",
-      "vi": "Đông Nam Á"
-    },
-    "OCEANIA": {
-      "en": "Oceania",
-      "vi": "Châu Đại Dương"
-    },
-    "EUROPE": {
-      "en": "Europe (excl. Nordic)",
-      "vi": "Châu Âu (trừ Bắc Âu)"
-    },
-    "NORDIC": {
-      "en": "Nordic (DK, SE, NO, FI, IS)",
-      "vi": "Bắc Âu (DK, SE, NO, FI, IS)"
-    },
-    "NORTH_AMERICA": {
-      "en": "North America (US, CA)",
-      "vi": "Bắc Mỹ (Mỹ, Canada)"
-    },
-    "LATIN_AMERICA": {
-      "en": "Latin America",
-      "vi": "Mỹ Latinh"
-    },
-    "MEA": {
-      "en": "Middle East & Africa",
-      "vi": "Trung Đông & châu Phi"
-    },
-    "ONLINE": {
-      "en": "Online / Global",
-      "vi": "Trực tuyến / Toàn cầu"
-    }
-  },
-  "nordicCountries": [
-    "DK",
-    "SE",
-    "NO",
-    "FI",
-    "IS"
-  ],
-  "jobRoles": [
-    "Postdoc",
-    "Research Scientist",
-    "Assistant Professor",
-    "Research Engineer",
-    "Data Scientist",
-    "Fellowship",
-    "Other"
-  ],
-  "repoSearch": {
-    "pagesPerQuery": 2,
-    "perPage": 100,
-    "minStars": 0,
-    "activeMonths": 12,
-    "readmeDoiCheckLimit": 1000,
-    "queries": [
+[
+  {
+    "id": "evt-isap-2027",
+    "kind": "Conference",
+    "title": "9th Congress of the International Society for Applied Phycology",
+    "acronym": "ISAP 2027",
+    "organizer": "International Society for Applied Phycology; hosted by Murdoch University",
+    "subjects": [
+      "ALGAE"
+    ],
+    "tier": 1,
+    "region": "OCEANIA",
+    "country": "AU",
+    "city": "Perth",
+    "mode": "In-person",
+    "startDate": "2027-11-21",
+    "endDate": "2027-11-26",
+    "status": "Open",
+    "milestones": [
       {
-        "q": "microalgae \"machine learning\"",
-        "tier": 1,
-        "subjects": [
-          "ALGAE",
-          "AI_ENV"
-        ],
-        "mustMatchAny": [
-          "microalga",
-          "algae",
-          "algal"
-        ]
+        "type": "special_session",
+        "date": "2027-04-15",
+        "tz": null,
+        "note": "Mini-Symposium expressions of interest; notification 2027-05-30. Send EOI to ISAP27@murdoch.edu.au, subject 'ISAP 2027 Mini-Symposium EOI – [Lead Organiser Name]'. No cut-off time stated."
       },
       {
-        "q": "microalgae \"deep learning\"",
-        "tier": 1,
-        "subjects": [
-          "ALGAE",
-          "AI_ENV"
-        ],
-        "mustMatchAny": [
-          "microalga",
-          "algae",
-          "algal"
-        ]
+        "type": "notification",
+        "date": "2027-05-30",
+        "tz": null,
+        "note": "Mini-Symposium acceptance"
       },
       {
-        "q": "photobioreactor",
-        "tier": 1,
-        "subjects": [
-          "ALGAE"
-        ],
-        "mustMatchAny": [
-          "photobioreactor",
-          "algae",
-          "algal",
-          "microalga",
-          "cyanobacteri"
-        ]
-      },
-      {
-        "q": "topic:microalgae",
-        "tier": 1,
-        "subjects": [
-          "ALGAE"
-        ],
-        "mustMatchAny": [
-          "microalga",
-          "algae",
-          "algal"
-        ]
-      },
-      {
-        "q": "algae growth model",
-        "tier": 1,
-        "subjects": [
-          "ALGAE"
-        ],
-        "mustMatchAny": [
-          "alga"
-        ]
-      },
-      {
-        "q": "wastewater \"machine learning\"",
-        "tier": 1,
-        "subjects": [
-          "WATER",
-          "AI_ENV"
-        ],
-        "mustMatchAny": [
-          "wastewater",
-          "sewage",
-          "effluent",
-          "wwtp"
-        ]
-      },
-      {
-        "q": "wastewater \"deep learning\"",
-        "tier": 1,
-        "subjects": [
-          "WATER",
-          "AI_ENV"
-        ],
-        "mustMatchAny": [
-          "wastewater",
-          "sewage",
-          "effluent",
-          "wwtp"
-        ]
-      },
-      {
-        "q": "wastewater \"digital twin\"",
-        "tier": 1,
-        "subjects": [
-          "WATER",
-          "AI_ENV"
-        ],
-        "mustMatchAny": [
-          "wastewater",
-          "wwtp",
-          "treatment"
-        ]
-      },
-      {
-        "q": "wastewater \"soft sensor\"",
-        "tier": 1,
-        "subjects": [
-          "WATER",
-          "AI_ENV"
-        ],
-        "mustMatchAny": [
-          "wastewater",
-          "wwtp",
-          "sensor"
-        ]
-      },
-      {
-        "q": "WWTP prediction",
-        "tier": 1,
-        "subjects": [
-          "WATER",
-          "AI_ENV"
-        ],
-        "mustMatchAny": [
-          "wwtp",
-          "wastewater"
-        ]
-      },
-      {
-        "q": "bioreactor \"reinforcement learning\"",
-        "tier": 1,
-        "subjects": [
-          "AI_ENV"
-        ],
-        "mustMatchAny": [
-          "bioreactor",
-          "bioprocess",
-          "fermentation"
-        ]
-      },
-      {
-        "q": "\"activated sludge\" model",
-        "tier": 2,
-        "subjects": [
-          "WATER"
-        ],
-        "mustMatchAny": [
-          "activated sludge",
-          "asm1",
-          "asm2",
-          "asm3",
-          "bsm1",
-          "bsm2"
-        ]
-      },
-      {
-        "q": "BSM1 benchmark simulation",
-        "tier": 2,
-        "subjects": [
-          "WATER",
-          "AI_ENV"
-        ],
-        "mustMatchAny": [
-          "bsm1",
-          "bsm2",
-          "benchmark simulation",
-          "activated sludge"
-        ]
-      },
-      {
-        "q": "\"membrane bioreactor\"",
-        "tier": 2,
-        "subjects": [
-          "WATER"
-        ],
-        "mustMatchAny": [
-          "membrane bioreactor",
-          "mbr\\b",
-          "fouling"
-        ]
-      },
-      {
-        "q": "\"anaerobic digestion\" model",
-        "tier": 2,
-        "subjects": [
-          "WATER"
-        ],
-        "mustMatchAny": [
-          "anaerobic digestion",
-          "adm1",
-          "biogas"
-        ]
-      },
-      {
-        "q": "topic:wastewater",
-        "tier": 2,
-        "subjects": [
-          "WATER"
-        ],
-        "mustMatchAny": [
-          "wastewater",
-          "sewage",
-          "wwtp",
-          "effluent",
-          "sludge"
-        ]
-      },
-      {
-        "q": "\"water quality\" prediction lstm",
-        "tier": 2,
-        "subjects": [
-          "WATER",
-          "AI_ENV"
-        ],
-        "mustMatchAny": [
-          "water quality",
-          "water"
-        ]
-      },
-      {
-        "q": "\"PFAS\" water",
-        "tier": 2,
-        "subjects": [
-          "CARBON_PFAS"
-        ],
-        "mustMatchAny": [
-          "pfas\\b",
-          "perfluoro",
-          "polyfluoro",
-          "pfoa\\b",
-          "pfos\\b"
-        ]
-      },
-      {
-        "q": "perfluoroalkyl",
-        "tier": 2,
-        "subjects": [
-          "CARBON_PFAS"
-        ],
-        "mustMatchAny": [
-          "pfas\\b",
-          "perfluoro",
-          "polyfluoro",
-          "pfoa\\b",
-          "pfos\\b"
-        ]
-      },
-      {
-        "q": "\"carbon capture\" algae",
-        "tier": 2,
-        "subjects": [
-          "CARBON_PFAS",
-          "ALGAE"
-        ],
-        "mustMatchAny": [
-          "carbon capture",
-          "co2",
-          "alga"
-        ]
-      },
-      {
-        "q": "wastewater metagenomics",
-        "tier": 2,
-        "subjects": [
-          "ENV_BIOINFO",
-          "WATER"
-        ],
-        "mustMatchAny": [
-          "wastewater",
-          "sewage",
-          "sludge",
-          "metagenom"
-        ]
-      },
-      {
-        "q": "\"environmental metagenomics\" pipeline",
-        "tier": 3,
-        "subjects": [
-          "ENV_BIOINFO"
-        ],
-        "mustMatchAny": [
-          "metagenom"
-        ]
-      },
-      {
-        "q": "eDNA metabarcoding",
-        "tier": 3,
-        "subjects": [
-          "OCEAN",
-          "ENV_BIOINFO"
-        ],
-        "mustMatchAny": [
-          "edna",
-          "metabarcod",
-          "environmental dna"
-        ]
-      },
-      {
-        "q": "\"harmful algal bloom\" prediction",
-        "tier": 3,
-        "subjects": [
-          "OCEAN",
-          "ALGAE",
-          "AI_ENV"
-        ],
-        "mustMatchAny": [
-          "algal bloom",
-          "habs?\\b",
-          "cyanobacteri"
-        ]
-      },
-      {
-        "q": "phytoplankton classification",
-        "tier": 3,
-        "subjects": [
-          "OCEAN",
-          "ALGAE",
-          "AI_ENV"
-        ],
-        "mustMatchAny": [
-          "phytoplankton",
-          "plankton",
-          "diatom"
-        ]
+        "type": "abstract",
+        "date": null,
+        "tz": null,
+        "note": null
       }
     ],
-    "_matchRule": "mustMatchAny entries are regular expressions matched case-insensitively against name+description+topics, with an implicit leading word boundary (so 'microalga' matches 'microalgae', 'pfas\\\\b' does not match 'pfast'). No match -> needsReview=true (hidden by default in the page)."
-  },
-  "sourceLeads": {
-    "_comment": "Entry points for prompts A/B. LEADS, NOT PROOF: every record must be verified on the organizer's/employer's own page. Domains marked check:true have not been confirmed by Claude and must be checked before use.",
-    "events": {
-      "ONLINE": [
-        "iwa-network.org",
-        "worldwatercongress.org",
-        "appliedphycologysoc.org",
-        "climatechange.ai",
-        "iscb.org",
-        "isme-microbes.org"
-      ],
-      "EUROPE": [
-        "eaba-association.org",
-        "iwa-network.org (specialist conferences: Watermatex, ICA, LET, MEWE)",
-        "euraxess.ec.europa.eu (events)"
-      ],
-      "NORDIC": [
-        "dtu.dk",
-        "kth.se",
-        "chalmers.se",
-        "lu.se",
-        "ntnu.edu",
-        "aalto.fi",
-        "nordforsk.org"
-      ],
-      "NORTH_AMERICA": [
-        "algaebiomass.org",
-        "wef.org (WEFTEC)",
-        "acs.org",
-        "pnnl.gov"
-      ],
-      "LATIN_AMERICA": [
-        "fapesp.br (São Paulo School of Advanced Science)"
-      ],
-      "OCEANIA": [
-        "appliedphycologysoc.org (ISAP 2027 Perth)",
-        "csiro.au"
-      ],
-      "TW": [
-        "nstc.gov.tw",
-        "ncku.edu.tw",
-        {
-          "domain": "cienve.org.tw",
-          "check": true
-        }
-      ],
-      "VN": [
-        "nafosted.gov.vn",
-        {
-          "domain": "vast.vn",
-          "check": true
-        }
-      ],
-      "EAST_ASIA": [
-        "jsps.go.jp",
-        "nrf.re.kr"
-      ],
-      "SE_ASIA": [
-        "a-star.edu.sg",
-        "nus.edu.sg",
-        "ntu.edu.sg"
-      ]
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
     },
-    "jobs": {
-      "EUROPE": [
-        "euraxess.ec.europa.eu",
-        "marie-sklodowska-curie-actions.ec.europa.eu",
-        "jobs.ac.uk",
-        "academictransfer.com",
-        "academics.de",
-        "eawag.ch",
-        "wetsus.eu",
-        "kwrwater.nl",
-        "humboldt-foundation.de",
-        "daad.de",
-        "academicpositions.com"
-      ],
-      "NORDIC": [
-        "jobbnorge.no",
-        "dtu.dk",
-        "kth.se",
-        "chalmers.se",
-        "lu.se",
-        "uu.se",
-        "ntnu.edu",
-        "aalto.fi",
-        "helsinki.fi"
-      ],
-      "NORTH_AMERICA": [
-        "jobs.sciencecareers.org",
-        "nature.com/naturecareers",
-        "higheredjobs.com",
-        "pnnl.gov",
-        "waterrf.org",
-        "nserc-crsng.gc.ca",
-        "mitacs.ca"
-      ],
-      "LATIN_AMERICA": [
-        "fapesp.br"
-      ],
-      "OCEANIA": [
-        "csiro.au",
-        "murdoch.edu.au"
-      ],
-      "TW": [
-        "nstc.gov.tw",
-        "ncku.edu.tw",
-        "sinica.edu.tw"
-      ],
-      "VN": [
-        "nafosted.gov.vn"
-      ],
-      "EAST_ASIA": [
-        "jsps.go.jp",
-        "nrf.re.kr",
-        "jrecin.jst.go.jp"
-      ],
-      "SE_ASIA": [
-        "a-star.edu.sg",
-        "nus.edu.sg",
-        "ntu.edu.sg"
-      ]
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://www.appliedphycologysoc.org/Congress-2027",
+      "https://www.appliedphycologysoc.org/page-18057"
+    ],
+    "contact": "ISAP27@murdoch.edu.au",
+    "sourceDate": "2026-11-16",
+    "verification": "partial",
+    "conflicts": [
+      {
+        "field": "startDate",
+        "values": [
+          "mid-June 2027 (older ISAP event page, dates TBC)",
+          "2027-11-21 to 2027-11-26 (ISAP Congress-2027 page and 2026-10-19 news post)"
+        ],
+        "resolution": "Used the newer official statement (21–26 Nov 2027)."
+      }
+    ],
+    "notes": "Triennial congress; the core venue for applied micro- and macroalgae research. Verified: dates, city, Mini-Symposium EOI call. Not verified: abstract deadline, fees, remote presentation. No dedicated congress website found as of 2026-11-16. CAUTION: isap2027.org is a DIFFERENT event (32nd International Symposium on Antennas and Propagation, Pattaya, Thailand, 9–12 Nov 2027) — same acronym, unrelated field.",
+    "vi": {
+      "notes": "Hội nghị 3 năm một lần, quan trọng nhất cho vi tảo ứng dụng. Đã xác minh: ngày, thành phố, kêu gọi đề xuất Mini-Symposium. Chưa xác minh: hạn nộp tóm tắt, phí, trình bày từ xa. Chưa có website riêng tính đến 16/11/2026. CHÚ Ý: isap2027.org là sự kiện KHÁC (Hội nghị Anten và Truyền sóng lần 32, Pattaya, Thái Lan, 9–12/11/2027) — trùng tên viết tắt, khác lĩnh vực."
+    }
+  },
+  {
+    "id": "evt-algaeurope-2026",
+    "kind": "Conference",
+    "title": "AlgaEurope 2026",
+    "acronym": "AlgaEurope 2026",
+    "organizer": "European Algae Biomass Association (EABA); DLG Markets Benelux",
+    "subjects": [
+      "ALGAE"
+    ],
+    "tier": 1,
+    "region": "EUROPE",
+    "country": "MT",
+    "city": "Valletta (Hilton Malta)",
+    "mode": "In-person",
+    "startDate": "2026-12-08",
+    "endDate": "2026-12-11",
+    "status": "Announced",
+    "milestones": [
+      {
+        "type": "abstract",
+        "date": null,
+        "tz": null,
+        "note": "Not verified; very likely closed (conference starts 2026-12-08)"
+      },
+      {
+        "type": "registration",
+        "date": null,
+        "tz": null,
+        "note": "Registration deadline not verified"
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": "Conference registration EUR 1,395; EABA members & students EUR 895; conference dinner EUR 80; prices exclude 18% VAT (2026 brochure)",
+      "value": 1395,
+      "currency": "EUR",
+      "basis": "standard conference registration, excl. 18% VAT"
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://www.eaba-association.org/en/news/algaeurope-2026-to-bring-the-global-algae-community-to-malta",
+      "https://www.algaeurope.org",
+      "https://media-01.imu.nl/storage/algaeurope.org/421/algaeurope-2026-conference-brochure.pdf"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-17",
+    "verification": "partial",
+    "conflicts": [],
+    "notes": "Dates 8–11 Dec 2026 confirmed by EABA; venue Hilton Malta (EU Blue Economy Observatory listing). Fees from the official 2026 brochure. China is the 2026 Partner Country. Industry-heavy audience: good for networking with algae producers.",
+    "vi": {
+      "notes": "EABA xác nhận ngày 8–11/12/2026; địa điểm Hilton Malta. Phí lấy từ brochure chính thức 2026. Khán giả thiên về doanh nghiệp: tốt để kết nối với nhà sản xuất vi tảo."
+    }
+  },
+  {
+    "id": "evt-iwa-wwce-2028",
+    "kind": "Conference",
+    "title": "IWA World Water Congress & Exhibition 2028",
+    "acronym": "IWA WWCE 2028",
+    "organizer": "International Water Association",
+    "subjects": [
+      "WATER"
+    ],
+    "tier": 2,
+    "region": "SE_ASIA",
+    "country": "MY",
+    "city": "Kuching",
+    "mode": "In-person",
+    "startDate": null,
+    "endDate": null,
+    "status": "Watchlist",
+    "milestones": [],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://iwa-network.org/news/2028-2030-world-water-congress-exhibition/"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-16",
+    "verification": "partial",
+    "conflicts": [],
+    "notes": "Host city confirmed by IWA; dates not announced. Biennial flagship water congress — the call for content will likely open in 2027 (inferred from the biennial cycle, not verified).",
+    "vi": {
+      "notes": "IWA đã xác nhận thành phố đăng cai, chưa công bố ngày. Kêu gọi bài có thể mở năm 2027 (suy luận từ chu kỳ 2 năm, chưa xác minh)."
+    }
+  },
+  {
+    "id": "evt-watermatex-2027",
+    "kind": "Conference",
+    "title": "12th IWA Symposium on Modelling and Integrated Assessment",
+    "acronym": "Watermatex 2027",
+    "organizer": "IWA Modelling & Integrated Assessment Specialist Group; organising committee INRAE (chairs J.-P. Steyer, G. Capson Tojo)",
+    "subjects": [
+      "WATER",
+      "AI_ENV"
+    ],
+    "tier": 1,
+    "region": "EUROPE",
+    "country": "FR",
+    "city": "Sète (Le Lazaret)",
+    "mode": "In-person",
+    "startDate": "2027-05-16",
+    "endDate": "2027-05-20",
+    "status": "Announced",
+    "milestones": [
+      {
+        "type": "abstract",
+        "date": null,
+        "tz": null,
+        "note": null
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://www.iwa-network.org/events/watermatex-2027"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-17",
+    "verification": "partial",
+    "conflicts": [
+      {
+        "field": "startDate",
+        "values": [
+          "15–19 May 2027 (IWA event page header)",
+          "16–20 May 2027 (description on the same IWA page)"
+        ],
+        "resolution": "Used 16–20 May (description text); confirm on the conference's own website."
+      }
+    ],
+    "notes": "Most directly relevant venue for AI/digital-twin/hybrid modelling of wastewater processes (topics explicitly include digital twins, AI, hybrid modelling, smart sensors). Deadlines and fees not on the IWA page.",
+    "vi": {
+      "notes": "Hội nghị sát nhất với hướng AI/digital twin/mô hình lai cho xử lý nước thải. Chưa có hạn nộp và phí trên trang IWA."
+    }
+  },
+  {
+    "id": "evt-iwa-let-2027",
+    "kind": "Conference",
+    "title": "21st IWA Leading Edge Conference on Water and Wastewater Technologies",
+    "acronym": "LET 2027",
+    "organizer": "International Water Association",
+    "subjects": [
+      "WATER"
+    ],
+    "tier": 2,
+    "region": "EUROPE",
+    "country": "BE",
+    "city": "Ghent",
+    "mode": "In-person",
+    "startDate": "2027-05-24",
+    "endDate": "2027-05-28",
+    "status": "Open",
+    "milestones": [
+      {
+        "type": "abstract",
+        "date": null,
+        "tz": null,
+        "note": "Call for papers stated as open; deadline not shown on homepage (author notification 2027-01-15 implies a deadline before that)"
+      },
+      {
+        "type": "notification",
+        "date": "2027-01-15",
+        "tz": null,
+        "note": "Author notification"
+      },
+      {
+        "type": "special_session",
+        "date": "2027-03-02",
+        "tz": null,
+        "note": "Workshop proposal deadline"
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://iwa-let.org/"
+    ],
+    "contact": "let@iwahq.org",
+    "sourceDate": "2026-11-17",
+    "verification": "partial",
+    "conflicts": [],
+    "notes": "Flagship IWA technology conference. CHECK the paper deadline urgently: notification on 15 Jan 2027 means the abstract deadline is probably already close or past.",
+    "vi": {
+      "notes": "Hội nghị công nghệ hàng đầu của IWA. CẦN KIỂM TRA GẤP hạn nộp: thông báo kết quả 15/1/2027 nghĩa là hạn nộp có thể sắp hết hoặc đã qua."
+    }
+  },
+  {
+    "id": "evt-lwwtp-2027",
+    "kind": "Conference",
+    "title": "15th IWA Specialized Conference on Design, Operation and Economics of Large Wastewater Treatment Plants",
+    "acronym": "LWWTP 2027",
+    "organizer": "IWA; TU Wien Institute for Water Quality and Resource Management",
+    "subjects": [
+      "WATER",
+      "AI_ENV"
+    ],
+    "tier": 2,
+    "region": "EUROPE",
+    "country": "AT",
+    "city": "Vienna",
+    "mode": "In-person",
+    "startDate": "2027-09-12",
+    "endDate": "2027-09-16",
+    "status": "Announced",
+    "milestones": [
+      {
+        "type": "abstract",
+        "date": null,
+        "tz": null,
+        "note": "Not verified on the official site (CfP is a PDF). EBNet listing shows both '30 Sept 2026' and '30 Sept 2027' — if 2026, it has passed."
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://lwwtp2027.org/"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-17",
+    "verification": "partial",
+    "conflicts": [
+      {
+        "field": "milestones.abstract",
+        "values": [
+          "30 Sept 2026 (EBNet page body)",
+          "30 Sept 2027 (EBNet search snippet; impossible, after the conference)"
+        ],
+        "resolution": "Left null; open the CfP PDF on lwwtp2027.org."
+      }
+    ],
+    "notes": "Topics explicitly include AI applications in WWTP design and operation, energy integration, nutrient recovery and the revised EU Urban Wastewater Treatment Directive. Practitioner-heavy audience.",
+    "vi": {
+      "notes": "Chủ đề có AI trong thiết kế và vận hành nhà máy xử lý nước thải. Hạn nộp chưa xác minh (nguồn phụ mâu thuẫn)."
+    }
+  },
+  {
+    "id": "evt-nordiwa-2027",
+    "kind": "Conference",
+    "title": "NORDIWA 2027 — Nordic Wastewater Conference",
+    "acronym": "NORDIWA 2027",
+    "organizer": "DANVA with Nordic water associations (FIWA, Norsk Vann, Samorka, Svenskt Vatten)",
+    "subjects": [
+      "WATER"
+    ],
+    "tier": 2,
+    "region": "NORDIC",
+    "country": "DK",
+    "city": "Copenhagen (Tivoli Hotel & Congress Center)",
+    "mode": "In-person",
+    "startDate": "2027-09-01",
+    "endDate": "2027-09-03",
+    "status": "Open",
+    "milestones": [
+      {
+        "type": "abstract",
+        "date": "2026-12-18",
+        "tz": null,
+        "note": "Abstract call opened 2026-10-19 (per organiser announcement); verify on nordiwa.org"
+      },
+      {
+        "type": "registration",
+        "date": null,
+        "tz": null,
+        "note": "Registration opens March 2027"
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": "Previous editions: programme committee may recommend papers to IWA's Water Practice & Technology",
+      "verified": false
+    },
+    "urls": [
+      "https://www.nordiwa.org/"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-17",
+    "verification": "lead",
+    "conflicts": [],
+    "notes": "Leading Nordic wastewater conference (~500 participants in 2025), English language. Key dates come from a LinkedIn post by a Norsk Vann representative; nordiwa.org still showed an old edition on 2026-11-17. Treat as LEAD until the official site is updated.",
+    "vi": {
+      "notes": "Hội nghị nước thải lớn nhất Bắc Âu, dùng tiếng Anh. Hạn nộp 18/12/2026 lấy từ bài LinkedIn của đại diện Norsk Vann; website chính thức chưa cập nhật. Cần xác minh."
+    }
+  },
+  {
+    "id": "evt-epc9-2027",
+    "kind": "Conference",
+    "title": "9th European Phycological Congress",
+    "acronym": "EPC9",
+    "organizer": "Federation of European Phycological Societies (FEPS)",
+    "subjects": [
+      "ALGAE"
+    ],
+    "tier": 2,
+    "region": "EUROPE",
+    "country": "PL",
+    "city": "Kraków",
+    "mode": "In-person",
+    "startDate": "2027-08-30",
+    "endDate": "2027-09-03",
+    "status": "Open",
+    "milestones": [
+      {
+        "type": "early_bird",
+        "date": "2027-03-31",
+        "tz": null,
+        "note": null
+      },
+      {
+        "type": "abstract",
+        "date": "2027-04-01",
+        "tz": null,
+        "note": null
+      },
+      {
+        "type": "special_session",
+        "date": "2026-10-01",
+        "tz": null,
+        "note": "Session proposals (passed)"
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://www.feps-algae.org/wp-content/uploads/2026/08/First_Circular_August_2027.pdf",
+      "https://9epc.syskonf.pl/"
+    ],
+    "contact": "EPC9@iop.krakow.pl",
+    "sourceDate": "2026-11-17",
+    "verification": "full",
+    "conflicts": [],
+    "notes": "Held every four years; broad phycology (biodiversity, harmful algae, physiology, genomics, biorefinery). Little AI content — useful for algal-biology collaborators rather than ML audiences.",
+    "vi": {
+      "notes": "4 năm một lần, phycology tổng quát. Ít nội dung AI; hữu ích để tìm cộng tác viên sinh học vi tảo."
+    }
+  },
+  {
+    "id": "evt-cmp-2027",
+    "kind": "Conference",
+    "title": "7th International Conference on Monitoring and Control in Biomass Conversion Processes",
+    "acronym": "CMP 2027",
+    "organizer": "DBFZ Deutsches Biomasseforschungszentrum",
+    "subjects": [
+      "AI_ENV"
+    ],
+    "tier": 2,
+    "region": "EUROPE",
+    "country": "DE",
+    "city": "Leipzig",
+    "mode": "In-person",
+    "startDate": "2027-03-23",
+    "endDate": "2027-03-24",
+    "status": "Closed",
+    "milestones": [
+      {
+        "type": "abstract",
+        "date": "2026-11-03",
+        "tz": null,
+        "note": "Passed"
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://ebnet.ac.uk/?p=10506"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-17",
+    "verification": "lead",
+    "conflicts": [],
+    "notes": "Topics: AI/ML, model-based monitoring and control, sensors, process modelling, microbiological process monitoring — directly transferable to bioreactor control. Source is an EBNet listing; verify on dbfz.de. Abstract deadline has passed; attendance still possible.",
+    "vi": {
+      "notes": "Chủ đề AI/ML, điều khiển dựa trên mô hình, cảm biến cho quá trình sinh khối — chuyển giao được cho bioreactor. Đã hết hạn nộp tóm tắt; vẫn có thể tham dự. Nguồn phụ, cần xác minh."
+    }
+  },
+  {
+    "id": "evt-eubce-2027",
+    "kind": "Conference",
+    "title": "35th European Biomass Conference and Exhibition",
+    "acronym": "EUBCE 2027",
+    "organizer": "EUBCE / ETA-Florence Renewable Energies",
+    "subjects": [
+      "CARBON_PFAS",
+      "ALGAE"
+    ],
+    "tier": 3,
+    "region": "EUROPE",
+    "country": "FR",
+    "city": "Reims",
+    "mode": "In-person",
+    "startDate": "2027-05-25",
+    "endDate": "2027-05-28",
+    "status": "Closed",
+    "milestones": [
+      {
+        "type": "abstract",
+        "date": "2026-10-30",
+        "tz": null,
+        "note": "Passed"
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://ebnet.ac.uk/?p=10461"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-17",
+    "verification": "lead",
+    "conflicts": [],
+    "notes": "Large biomass/bioenergy meeting (1,400+ participants). Peripheral to AI-bioreactor work. Source is an EBNet listing; verify on eubce.com.",
+    "vi": {
+      "notes": "Hội nghị sinh khối/năng lượng sinh học lớn. Ngoại vi với hướng AI–bioreactor. Nguồn phụ."
+    }
+  },
+  {
+    "id": "evt-iwa-dws-2026",
+    "kind": "Conference",
+    "title": "IWA Digital Water Summit 2026",
+    "acronym": "DWS 2026",
+    "organizer": "International Water Association; Istanbul Technical University",
+    "subjects": [
+      "WATER",
+      "AI_ENV"
+    ],
+    "tier": 2,
+    "region": "EUROPE",
+    "country": "TR",
+    "city": "Istanbul (Haliç Congress Center)",
+    "mode": "In-person",
+    "startDate": "2026-11-24",
+    "endDate": "2026-11-26",
+    "status": "Closed",
+    "milestones": [
+      {
+        "type": "registration",
+        "date": null,
+        "tz": null,
+        "note": "Submissions closed; registration status not verified"
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://digitalwatersummit.org/"
+    ],
+    "contact": "digitalwatersummit@iwahq.org",
+    "sourceDate": "2026-11-17",
+    "verification": "partial",
+    "conflicts": [
+      {
+        "field": "startDate",
+        "values": [
+          "7–9 April 2026 (original date)",
+          "24–26 November 2026 (rescheduled, official site)"
+        ],
+        "resolution": "Used the rescheduled November dates."
+      }
+    ],
+    "notes": "Business/utility-oriented digital water event, one week away. Useful mainly for industry contacts on digital twins/AIoT in utilities.",
+    "vi": {
+      "notes": "Sự kiện số hóa ngành nước, thiên về doanh nghiệp, diễn ra tuần sau. Hữu ích để kết nối công ty về digital twin/AIoT."
+    }
+  },
+  {
+    "id": "evt-ismpmi-2027",
+    "kind": "Conference",
+    "title": "22nd International Congress on Molecular Plant-Microbe Interactions",
+    "acronym": "IS-MPMI 2027",
+    "organizer": "International Society for Molecular Plant-Microbe Interactions",
+    "subjects": [
+      "PLANT_MICROBE"
+    ],
+    "tier": 2,
+    "region": "EAST_ASIA",
+    "country": "KR",
+    "city": "Jeju",
+    "mode": "In-person",
+    "startDate": "2027-07-18",
+    "endDate": "2027-07-22",
+    "status": "Announced",
+    "milestones": [
+      {
+        "type": "special_session",
+        "date": "2026-09-25",
+        "tz": null,
+        "note": "Concurrent session proposals (passed); pre-congress satellite proposals being accepted"
+      },
+      {
+        "type": "abstract",
+        "date": null,
+        "tz": null,
+        "note": null
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://ismpmi.org/events/2027-is-mpmi-congress/"
+    ],
+    "contact": "contact@ismpmi.org",
+    "sourceDate": "2026-11-17",
+    "verification": "partial",
+    "conflicts": [],
+    "notes": "Premier biennial plant–microbe congress (>1,000 attendees). Opening keynote by Sophien Kamoun on AI-guided studies of plant immunity — a signal that AI × plant–microbe is entering the mainstream programme. Abstract deadline not yet announced.",
+    "vi": {
+      "notes": "Hội nghị tương tác thực vật–vi sinh vật lớn nhất (2 năm/lần). Keynote mở màn về AI trong nghiên cứu miễn dịch thực vật. Chưa có hạn nộp tóm tắt."
+    }
+  },
+  {
+    "id": "evt-biostimulants-wc-2026",
+    "kind": "Conference",
+    "title": "9th Biostimulants World Congress",
+    "acronym": "BWC 2026",
+    "organizer": "New AG International / Informa, in association with EBIC",
+    "subjects": [
+      "PLANT_MICROBE"
+    ],
+    "tier": 2,
+    "region": "NORTH_AMERICA",
+    "country": "US",
+    "city": "Sacramento (SAFE Credit Union Convention Center)",
+    "mode": "Hybrid",
+    "startDate": "2026-11-30",
+    "endDate": "2026-12-03",
+    "status": "Closed",
+    "milestones": [
+      {
+        "type": "registration",
+        "date": null,
+        "tz": null,
+        "note": "Paper call closed; registration still possible (in-person or digital)"
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://informaconnect.com/biostimulants-world-congress/",
+      "https://informaconnect.com/biostimulants-world-congress/call-for-papers"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-17",
+    "verification": "partial",
+    "conflicts": [],
+    "notes": "World's largest biostimulant event; scientific and commercial streams; workshops 30 Nov, conference 1–3 Dec. Themes include microbial biostimulants, efficacy testing/crop phenotyping, and biostimulants with precision agriculture. Hybrid — digital attendance possible from Taiwan. Next edition location/date not verified.",
+    "vi": {
+      "notes": "Sự kiện biostimulant lớn nhất thế giới; có hình thức trực tuyến nên có thể tham dự từ Đài Loan. Đã hết hạn nộp bài; vẫn đăng ký tham dự được."
+    }
+  },
+  {
+    "id": "evt-keystone-pmes-2027",
+    "kind": "Conference",
+    "title": "Keystone Symposium: Plant and Microbe Engineering for Sustainability",
+    "acronym": "Keystone N2 2027",
+    "organizer": "Keystone Symposia (organizers: D. F. Voytas, R. Bock, J. Pett-Ridge)",
+    "subjects": [
+      "PLANT_MICROBE"
+    ],
+    "tier": 2,
+    "region": "NORTH_AMERICA",
+    "country": "CA",
+    "city": "Vancouver (Fairmont Hotel Vancouver)",
+    "mode": "Hybrid",
+    "startDate": "2027-05-02",
+    "endDate": "2027-05-05",
+    "status": "Announced",
+    "milestones": [
+      {
+        "type": "early_bird",
+        "date": "2027-03-03",
+        "tz": null,
+        "note": null
+      },
+      {
+        "type": "abstract",
+        "date": null,
+        "tz": null,
+        "note": "Abstract deadline not shown on programme page"
+      }
+    ],
+    "remotePresentation": null,
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://www.keystonesymposia.org/conferences/conference-listing/meeting/onpage-program/N22027"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-17",
+    "verification": "partial",
+    "conflicts": [],
+    "notes": "Sessions on engineering plant–microbe interactions and the rhizosphere for agricultural sustainability; short talks chosen from abstracts; livestream available. No biostimulant/VOC session by name.",
+    "vi": {
+      "notes": "Có phiên về kỹ thuật tương tác thực vật–vi sinh vật và vùng rễ; có livestream. Không có phiên riêng về biostimulant/VOC."
+    }
+  },
+  {
+    "id": "evt-egu-2027",
+    "kind": "Conference",
+    "title": "EGU General Assembly 2027 — session BG1: Volatile Organic Compounds at the Biosphere-Atmosphere Interface",
+    "acronym": "EGU27",
+    "organizer": "European Geosciences Union",
+    "subjects": [
+      "PLANT_MICROBE",
+      "CARBON_PFAS"
+    ],
+    "tier": 3,
+    "region": "EUROPE",
+    "country": "AT",
+    "city": "Vienna (Austria Center Vienna)",
+    "mode": "Hybrid",
+    "startDate": "2027-04-04",
+    "endDate": "2027-04-09",
+    "status": "Open",
+    "milestones": [
+      {
+        "type": "abstract",
+        "date": "2027-01-12",
+        "tz": "Europe/Vienna",
+        "note": "From a third-party listing; EGU usually sets 13:00 CET — confirm on egu27.eu. First authors must be EGU members; abstract processing charge applies."
+      }
+    ],
+    "remotePresentation": "yes",
+    "fee": {
+      "text": null,
+      "value": null,
+      "currency": null,
+      "basis": null
+    },
+    "proceedings": {
+      "text": null,
+      "verified": false
+    },
+    "urls": [
+      "https://meetingorganizer.copernicus.org/EGU27/session/61380",
+      "https://meetingorganizer.copernicus.org/EGU27/sessionprogramme/pg-selection"
+    ],
+    "contact": null,
+    "sourceDate": "2026-11-17",
+    "verification": "partial",
+    "conflicts": [],
+    "notes": "Relevant session on plant/soil/biogenic VOC emissions, analytical methods and modelling. Atmosphere-oriented rather than plant–microbe signalling, but a large hybrid venue with low barriers.",
+    "vi": {
+      "notes": "Phiên về phát thải VOC từ thực vật/đất, phương pháp phân tích và mô hình hóa. Thiên về khí quyển hơn là tín hiệu thực vật–vi sinh vật. Hình thức lai, dễ tham gia."
     }
   }
-}
+]
