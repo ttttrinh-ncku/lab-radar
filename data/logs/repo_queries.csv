@@ -74,3 +74,42 @@ date,query,tier,total_count,fetched,authenticated
 2026-11-17,eDNA metabarcoding,3,271,200,True
 2026-11-17,"""harmful algal bloom"" prediction",3,21,21,True
 2026-11-17,phytoplankton classification,3,20,20,True
+2026-11-20,"microalgae ""machine learning""",1,6,6,True
+2026-11-20,"microalgae ""deep learning""",1,7,7,True
+2026-11-20,photobioreactor,1,93,93,True
+2026-11-20,topic:microalgae,1,31,31,True
+2026-11-20,algae growth model,1,13,13,True
+2026-11-20,"wastewater ""machine learning""",1,61,61,True
+2026-11-20,"wastewater ""deep learning""",1,8,8,True
+2026-11-20,"wastewater ""digital twin""",1,15,15,True
+2026-11-20,"wastewater ""soft sensor""",1,8,8,True
+2026-11-20,WWTP prediction,1,17,17,True
+2026-11-20,"bioreactor ""reinforcement learning""",1,5,5,True
+2026-11-20,"""activated sludge"" model",2,27,27,True
+2026-11-20,BSM1 benchmark simulation,2,1,1,True
+2026-11-20,"""membrane bioreactor""",2,13,13,True
+2026-11-20,"""anaerobic digestion"" model",2,47,47,True
+2026-11-20,topic:wastewater,2,96,96,True
+2026-11-20,"""water quality"" prediction lstm",2,51,51,True
+2026-11-20,"""PFAS"" water",2,94,94,True
+2026-11-20,perfluoroalkyl,2,7,7,True
+2026-11-20,"""carbon capture"" algae",2,7,7,True
+2026-11-20,wastewater metagenomics,2,74,74,True
+2026-11-20,"""environmental metagenomics"" pipeline",3,8,8,True
+2026-11-20,eDNA metabarcoding,3,273,200,True
+2026-11-20,"""harmful algal bloom"" prediction",3,22,22,True
+2026-11-20,phytoplankton classification,3,20,20,True
+2026-11-20,"""plant growth promoting"" bacteria",2,9,9,True
+2026-11-20,PGPR,2,468,200,True
+2026-11-20,rhizosphere microbiome,2,68,68,True
+2026-11-20,"plant microbiome ""machine learning""",1,2,2,True
+2026-11-20,"rhizosphere ""machine learning""",1,2,2,True
+2026-11-20,"""volatile organic compounds"" microbial",2,2,2,True
+2026-11-20,"mVOC OR ""microbial volatiles""",2,55,55,True
+2026-11-20,GC-MS volatilome,2,1,1,True
+2026-11-20,"VOC ""machine learning"" GC-MS",1,2,2,True
+2026-11-20,biostimulant,2,38,38,True
+2026-11-20,"plant phenotyping ""deep learning"" stress",1,1,1,True
+2026-11-20,"""plant-microbe"" OR ""plant microbe interaction""",2,32,32,True
+2026-11-20,endophyte genome,2,6,6,True
+2026-11-20,"""secondary metabolite"" biosynthetic gene cluster bacteria plant",3,0,0,True
